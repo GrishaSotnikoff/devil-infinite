@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://ii88slxenuju"]
+
+[ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="1_r150o"]
+[ext_resource type="Script" uid="uid://b1jeintkkylg0" path="res://Models/Player.cs" id="2_idj7w"]
+
+[sub_resource type="Environment" id="Environment_idj7w"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kln2b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rgh2o"]
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_idj7w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(7.11056, 0, 0, 0, 1, 0, 0, 0, 9.33361, 0, -0.00374663, 0)
+mesh = SubResource("PlaneMesh_kln2b")
+
+[node name="Player" parent="." instance=ExtResource("1_r150o")]
+script = ExtResource("2_idj7w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_rgh2o")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602009, 0)
