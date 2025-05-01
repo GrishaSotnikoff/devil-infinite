@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgfj5uyppx65l"]
+
+[ext_resource type="Script" uid="uid://wvhtk0tvg8sg" path="res://Models/Weapon.cs" id="1_m5ws0"]
+[ext_resource type="PackedScene" uid="uid://ilnirghe7k24" path="res://Scenes/mdrxfbxwhole.tscn" id="2_sw2lr"]
+
+[node name="Weapon" type="Node3D"]
+script = ExtResource("1_m5ws0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="MuzzleFlash" type="OmniLight3D" parent="."]
+visible = false
+light_energy = 6.0
+omni_range = 4.0
+omni_attenuation = 6.0
+
+[node name="mdrxfbxwhole" parent="." instance=ExtResource("2_sw2lr")]
+script = ExtResource("1_m5ws0")
