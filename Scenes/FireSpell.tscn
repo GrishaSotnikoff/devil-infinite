@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://di7qvkju2mkac"]
+
+[ext_resource type="Script" uid="uid://dbmqoaf2p4ngj" path="res://Models/FireSpell.cs" id="1_bu54f"]
+[ext_resource type="Script" uid="uid://d4f4yum2vul2x" path="res://Models/RocketProjectile3D.cs" id="2_bu54f"]
+
+[sub_resource type="PackedScene" id="PackedScene_5gch1"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("ExplosionEffect", "Node3D", "CPUParticles3D", "emitting", "one_shot"),
+"node_count": 2,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 2, 2, -1, 2, 3, 0, 4, 1, 0),
+"variants": [false, true],
+"version": 3
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7fi3o"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7fi3o"]
+
+[sub_resource type="PackedScene" id="PackedScene_wj3nc"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("RocketProjectile3D", "script", "ExplosionEffectScene", "Node3D", "CollisionShape3D", "shape", "MeshInstance3D", "mesh"),
+"node_count": 3,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 3, 0, -1, 2, 1, 0, 2, 1, 0, 0, 0, 4, 4, -1, 1, 5, 2, 0, 0, 0, 6, 6, -1, 1, 7, 3, 0),
+"variants": [ExtResource("2_bu54f"), SubResource("PackedScene_5gch1"), SubResource("SphereShape3D_7fi3o"), SubResource("SphereMesh_7fi3o")],
+"version": 3
+}
+
+[node name="FireSpell" type="Node3D"]
+script = ExtResource("1_bu54f")
+RocketProjectile = SubResource("PackedScene_wj3nc")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://4r0fepdlh8lk"]
+
+[ext_resource type="Script" uid="uid://d4f4yum2vul2x" path="res://Models/RocketProjectile3D.cs" id="1_7fi3o"]
+[ext_resource type="PackedScene" uid="uid://dj87nbpmie70k" path="res://Scenes/ExplosionEffect.tscn" id="2_onk60"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xqddm"]
+radius = 0.1
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fi3o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onk60"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7fi3o"]
+
+[node name="RocketProjectile3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00415039, 2.76019, -0.00231934)
+script = ExtResource("1_7fi3o")
+Gravity = -40.0
+ExplosionEffectScene = ExtResource("2_onk60")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_xqddm")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_7fi3o")
+material_overlay = SubResource("StandardMaterial3D_onk60")
+mesh = SubResource("SphereMesh_7fi3o")

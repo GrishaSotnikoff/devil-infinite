@@ -1,12 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://cltvpheoyfl51"]
+[gd_scene load_steps=8 format=3 uid="uid://cltvpheoyfl51"]
 
+[ext_resource type="Script" uid="uid://b1jeintkkylg0" path="res://Models/Player.cs" id="1_5ixxa"]
 [ext_resource type="PackedScene" uid="uid://7pw4p6frm0a3" path="res://Scenes/m_grey_box_hands_placeholder.tscn" id="1_rpqav"]
 [ext_resource type="PackedScene" uid="uid://bt6ioesje7hre" path="res://Scenes/m_grey_box_ue_4_mannequin.tscn" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://dbmqoaf2p4ngj" path="res://Models/FireSpell.cs" id="3_dewec"]
+[ext_resource type="PackedScene" uid="uid://4r0fepdlh8lk" path="res://Scenes/RocketProjectile3D.tscn" id="4_5ixxa"]
+[ext_resource type="Script" uid="uid://h8wn2l4dmq2w" path="res://Models/LightningSpell.cs" id="4_nn08x"]
+[ext_resource type="Script" uid="uid://dj5uxq213cxgf" path="res://Models/SpellCaster.cs" id="8_megsn"]
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_5ixxa")
 
-[node name="m_Grey_Box_Hands_Placeholder" parent="." instance=ExtResource("1_rpqav")]
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04293, 0.192986)
+
+[node name="FireSpell" type="Node3D" parent="Camera3D"]
+script = ExtResource("3_dewec")
+RocketProjectile = ExtResource("4_5ixxa")
+
+[node name="LightningSpell" type="Node3D" parent="Camera3D"]
+script = ExtResource("4_nn08x")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="m_Grey_Box_Hands_Placeholder" parent="CharacterBody3D" instance=ExtResource("1_rpqav")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.189438, 0.204616)
 
-[node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("2_kyqiw")]
+[node name="m_Grey_Box_UE4_Mannequin" parent="CharacterBody3D" instance=ExtResource("2_kyqiw")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0348429, 0, 0.345714)
+
+[node name="SpellCaster" type="Node3D" parent="."]
+script = ExtResource("8_megsn")

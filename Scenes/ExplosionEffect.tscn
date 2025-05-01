@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj87nbpmie70k"]
+
+[ext_resource type="Script" uid="uid://cx22rb11lbqxd" path="res://Models/ExplosionEffect.cs" id="1_efrxf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bbavp"]
+
+[node name="ExplosionEffect" type="Node3D"]
+script = ExtResource("1_efrxf")
+Lifetime = 5.0
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+one_shot = true
+mesh = SubResource("SphereMesh_bbavp")
