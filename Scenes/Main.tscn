@@ -29,6 +29,7 @@ shape = SubResource("CapsuleShape3D_rgh2o")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11784, 0.227598)
+current = true
 
 [node name="Weapon" parent="Player" instance=ExtResource("3_kln2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.340805, 0.883309, -0.173585)

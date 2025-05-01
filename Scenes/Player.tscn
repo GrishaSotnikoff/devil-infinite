@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://cltvpheoyfl51"]
+[gd_scene load_steps=3 format=3 uid="uid://cltvpheoyfl51"]
+
+[ext_resource type="PackedScene" uid="uid://7pw4p6frm0a3" path="res://Scenes/m_grey_box_hands_placeholder.tscn" id="1_rpqav"]
+[ext_resource type="PackedScene" uid="uid://bt6ioesje7hre" path="res://Scenes/m_grey_box_ue_4_mannequin.tscn" id="2_kyqiw"]
 
 [node name="Player" type="CharacterBody3D"]
+
+[node name="m_Grey_Box_Hands_Placeholder" parent="." instance=ExtResource("1_rpqav")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.189438, 0.204616)
+
+[node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("2_kyqiw")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0348429, 0, 0.345714)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://7pw4p6frm0a3"]
+
+[ext_resource type="PackedScene" uid="uid://7qowm43exm3f" path="res://Objects/m_Grey_Box_Hands_Placeholder.fbx" id="1_20h8s"]
+
+[node name="m_Grey_Box_Hands_Placeholder" instance=ExtResource("1_20h8s")]
