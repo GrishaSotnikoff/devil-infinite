@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqk1ilo0uq5r0"]
+
+[ext_resource type="PackedScene" uid="uid://deu7ulhwob5i3" path="res://m_Grey_Box_Wall_2x100x8.fbx" id="1_p3tm0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cg2k6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_msu2i"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tplih"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_m5a7y"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Ground floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_cg2k6")
+
+[node name="m_Grey_Box_Wall_2x100x8" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, 97, 0, 0)
+
+[node name="m_Grey_Box_Wall_2x100x9" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, -98, 0, 0)
+
+[node name="m_Grey_Box_Wall_2x100x10" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 7, -1, -99)
+
+[node name="m_Grey_Box_Wall_2x100x12" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(-4.37114e-08, 0, -0.21, 0, 1, 0, 1, 0, -9.17939e-09, 0.489996, -1, -8.99999)
+
+[node name="m_Grey_Box_Wall_2x100x13" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.21, -9.51, -1, 1.29)
+
+[node name="m_Grey_Box_Wall_2x100x14" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(-4.37114e-08, 0, 0.21, 0, 1, 0, -1, 0, -9.17939e-09, 0.149992, -1, 11.29)
+
+[node name="m_Grey_Box_Wall_2x100x19" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(-4.2222e-08, 1.13133e-08, 0.21, 0.258819, 0.965926, 0, -0.965926, 0.258819, -9.17939e-09, 21.36, -0.671831, -9.79844)
+
+[node name="m_Grey_Box_Wall_2x100x20" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(1.26666e-07, -3.394e-08, -0.21, 0.258819, 0.965926, -8.70497e-17, 0.965926, -0.258819, 2.75382e-08, 21.36, -0.242125, 11.9164)
+
+[node name="m_Grey_Box_Wall_2x100x15" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(-1, 0, -5.50763e-09, 0, 1, 0, 8.74228e-08, 0, -0.063, 10.15, -1, 9.463)
+
+[node name="m_Grey_Box_Wall_2x100x16" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(-1, 0, -5.50763e-09, 0, 1, 0, 8.74228e-08, 0, -0.063, 10.15, -1, -6.72799)
+
+[node name="m_Grey_Box_Wall_2x100x17" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(4.37114e-08, -2.7, -1.81752e-08, -1, -1.18021e-07, 0, 0, 2.36042e-07, -0.2079, 11.15, 8, 1.02101)
+
+[node name="m_Grey_Box_Wall_2x100x11" parent="." instance=ExtResource("1_p3tm0")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 6.99999, 0, 99)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_msu2i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(34.457, -34.457, 0, 24.3648, 24.3648, 34.457, -24.3648, -24.3648, 34.457, 155.95, 108.918, -2.61497)
+mesh = SubResource("SphereMesh_tplih")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(34.457, -34.457, 0, 24.3648, 24.3648, 34.457, -24.3648, -24.3648, 34.457, 155.95, 141.756, 30.2231)
+mesh = SubResource("SphereMesh_tplih")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(19.1428, -55.5141, 0, 13.536, 39.2544, 19.1428, -13.536, -39.2544, 19.1428, 99.0991, 165.325, -26.6081)
+mesh = SubResource("CapsuleMesh_m5a7y")
