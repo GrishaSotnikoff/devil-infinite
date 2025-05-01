@@ -1,0 +1,26 @@
+[remap]
+
+importer="3d_texture"
+type="CompressedTexture3D"
+uid="uid://chs3bwkhv0iwy"
+path="res://.godot/imported/CaveMagmaSoil.png-4bed54917160db37bb687cba828c6473.ctex3d"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/CaveMagmaSoil.png"
+dest_files=["res://.godot/imported/CaveMagmaSoil.png-4bed54917160db37bb687cba828c6473.ctex3d"]
+
+[params]
+
+compress/mode=4
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+slices/horizontal=8
+slices/vertical=8

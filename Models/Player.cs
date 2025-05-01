@@ -19,16 +19,17 @@ public partial class Player : CharacterBody3D
 	[Export] public int MaxHP = 100;
 	[Export] public int MaxMana = 100;
 
-	private int _hp = 100;
-	private int _mana = 100;
+	private int _hp ;
+	private int _mana;
 
 	public int HP
 	{
 		get => _hp;
 		set
 		{
-			_hp = Mathf.Clamp(value, 0, MaxHP);
-			EmitSignal(nameof(StatsChangedEventHandler), _hp, _mana);
+			GD.Print("[Player] Jump");
+
+			EmitSignal(nameof(StatsChanged), _hp, _mana);
 		}
 	}
 
@@ -38,7 +39,7 @@ public partial class Player : CharacterBody3D
 		set
 		{
 			_mana = Mathf.Clamp(value, 0, MaxMana);
-			EmitSignal(nameof(StatsChangedEventHandler), _hp, _mana);
+			EmitSignal(nameof(StatsChanged), _hp, _mana);
 		}
 	}
 
@@ -81,7 +82,7 @@ public partial class Player : CharacterBody3D
 			{
 				vel.Y = JumpVelocity;
 				GD.Print("[Player] Jump");
-				HP = Mathf.Clamp(HP - 1, 0, MaxHP); // Example: reduce HP on jump
+				_hp = Mathf.Clamp(HP + 1, 0, MaxHP); // Example: reduce HP on jump
 				_isJumping = true;
 			}
 			else if (!_isJumping)

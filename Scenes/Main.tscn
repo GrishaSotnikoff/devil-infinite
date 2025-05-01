@@ -1,12 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://ii88slxenuju"]
+[gd_scene load_steps=10 format=3 uid="uid://ii88slxenuju"]
 
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="1_r150o"]
+[ext_resource type="Texture2D" uid="uid://bthjbitymomn6" path="res://Textures/CaveMagmaRocks.png" id="1_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://x2msayvr24uc" path="res://Scenes/HUD.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://ctuudycvufhpw" path="res://Scenes/Enemy.tscn" id="3_kln2b"]
 
 [sub_resource type="Environment" id="Environment_idj7w"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kln2b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbw6q"]
+albedo_texture = ExtResource("1_rgh2o")
+albedo_texture_force_srgb = true
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+disable_receive_shadows = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rgh2o"]
 
@@ -23,10 +31,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.17041, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(7.11056, 0, 0, 0, 1, 0, 0, 0, 9.33361, 0, -0.00374663, 0)
 mesh = SubResource("PlaneMesh_kln2b")
+surface_material_override/0 = SubResource("StandardMaterial3D_pbw6q")
 
 [node name="Player" parent="." instance=ExtResource("1_r150o")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_rgh2o")
 
 [node name="HUD" type="CanvasLayer" parent="Player"]

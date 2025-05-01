@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b40sk3rxj81va"]
+
+[ext_resource type="Texture2D" uid="uid://dobwhacqatkwe" path="res://Textures/CaveGoldenStones.png" id="1_4gh5q"]
+
+[resource]
+albedo_color = Color(1, 0, 1, 1)
+albedo_texture = ExtResource("1_4gh5q")

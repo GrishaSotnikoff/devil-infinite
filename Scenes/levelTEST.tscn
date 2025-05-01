@@ -1,10 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqk1ilo0uq5r0"]
+[gd_scene load_steps=15 format=3 uid="uid://dqk1ilo0uq5r0"]
 
-[ext_resource type="PackedScene" uid="uid://deu7ulhwob5i3" path="res://m_Grey_Box_Wall_2x100x8.fbx" id="1_p3tm0"]
+[ext_resource type="PackedScene" uid="uid://3w148ry42kgy" path="res://Objects/m_Grey_Box_Wall_2x100x8.fbx" id="1_p3tm0"]
+[ext_resource type="Texture2D" uid="uid://da8m2em5devg6" path="res://Textures/CaveCracks.png" id="1_tpefv"]
+[ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="2_vyarb"]
+[ext_resource type="Material" uid="uid://fseryn8knpx0" path="res://Textures/new_standard_material_3d1.tres" id="3_7uner"]
+
+[sub_resource type="Environment" id="Environment_vyarb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tpefv"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vyarb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyarb"]
+albedo_color = Color(1, 0.172549, 1, 1)
+albedo_texture = ExtResource("1_tpefv")
+albedo_texture_force_srgb = true
+rim_enabled = true
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7uner"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cg2k6"]
+material = SubResource("ORMMaterial3D_7uner")
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_msu2i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr3so"]
+albedo_color = Color(1, 0.0823529, 1, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xr3so"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tplih"]
 
@@ -12,49 +33,73 @@
 
 [node name="Level" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vyarb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 0, -50, 0)
+physics_material_override = SubResource("PhysicsMaterial_tpefv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0.005, 0)
+shape = SubResource("WorldBoundaryShape3D_vyarb")
+
 [node name="Ground floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vyarb")
 mesh = SubResource("PlaneMesh_cg2k6")
+surface_material_override/0 = SubResource("StandardMaterial3D_xr3so")
 
-[node name="m_Grey_Box_Wall_2x100x8" parent="." instance=ExtResource("1_p3tm0")]
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_xr3so")
+
+[node name="m_Grey_Box_Wall_2x100x8" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, 97, 0, 0)
+visible = false
 
-[node name="m_Grey_Box_Wall_2x100x9" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x9" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, -98, 0, 0)
+visible = false
 
-[node name="m_Grey_Box_Wall_2x100x10" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x10" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 7, -1, -99)
+visible = false
 
-[node name="m_Grey_Box_Wall_2x100x12" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x12" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(-4.37114e-08, 0, -0.21, 0, 1, 0, 1, 0, -9.17939e-09, 0.489996, -1, -8.99999)
+visible = false
 
-[node name="m_Grey_Box_Wall_2x100x13" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x13" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.21, -9.51, -1, 1.29)
+visible = false
 
-[node name="m_Grey_Box_Wall_2x100x14" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x14" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(-4.37114e-08, 0, 0.21, 0, 1, 0, -1, 0, -9.17939e-09, 0.149992, -1, 11.29)
+visible = false
 
-[node name="m_Grey_Box_Wall_2x100x19" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x19" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(-4.2222e-08, 1.13133e-08, 0.21, 0.258819, 0.965926, 0, -0.965926, 0.258819, -9.17939e-09, 21.36, -0.671831, -9.79844)
 
-[node name="m_Grey_Box_Wall_2x100x20" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x20" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(1.26666e-07, -3.394e-08, -0.21, 0.258819, 0.965926, -8.70497e-17, 0.965926, -0.258819, 2.75382e-08, 21.36, -0.242125, 11.9164)
 
-[node name="m_Grey_Box_Wall_2x100x15" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x15" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(-1, 0, -5.50763e-09, 0, 1, 0, 8.74228e-08, 0, -0.063, 10.15, -1, 9.463)
 
-[node name="m_Grey_Box_Wall_2x100x16" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x16" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(-1, 0, -5.50763e-09, 0, 1, 0, 8.74228e-08, 0, -0.063, 10.15, -1, -6.72799)
 
-[node name="m_Grey_Box_Wall_2x100x17" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x17" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(4.37114e-08, -2.7, -1.81752e-08, -1, -1.18021e-07, 0, 0, 2.36042e-07, -0.2079, 11.15, 8, 1.02101)
 
-[node name="m_Grey_Box_Wall_2x100x11" parent="." instance=ExtResource("1_p3tm0")]
+[node name="m_Grey_Box_Wall_2x100x8" parent="StaticBody3D2/m_Grey_Box_Wall_2x100x17" index="0"]
+surface_material_override/0 = ExtResource("3_7uner")
+
+[node name="m_Grey_Box_Wall_2x100x11" parent="StaticBody3D2" instance=ExtResource("1_p3tm0")]
 transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 6.99999, 0, 99)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_msu2i")
+[node name="m_Grey_Box_Wall_2x100x8" parent="StaticBody3D2/m_Grey_Box_Wall_2x100x11" index="0"]
+surface_material_override/0 = ExtResource("3_7uner")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(34.457, -34.457, 0, 24.3648, 24.3648, 34.457, -24.3648, -24.3648, 34.457, 155.95, 108.918, -2.61497)
@@ -67,3 +112,13 @@ mesh = SubResource("SphereMesh_tplih")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(19.1428, -55.5141, 0, 13.536, 39.2544, 19.1428, -13.536, -39.2544, 19.1428, 99.0991, 165.325, -26.6081)
 mesh = SubResource("CapsuleMesh_m5a7y")
+
+[node name="Player" parent="." instance=ExtResource("2_vyarb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458613, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.352005, 0.935998, 0, -0.935998, -0.352005, 0, 26.0337, 0)
+
+[editable path="StaticBody3D2/m_Grey_Box_Wall_2x100x16"]
+[editable path="StaticBody3D2/m_Grey_Box_Wall_2x100x17"]
+[editable path="StaticBody3D2/m_Grey_Box_Wall_2x100x11"]
