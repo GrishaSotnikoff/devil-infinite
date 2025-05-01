@@ -30,7 +30,7 @@ public partial class Weapon : Node3D
 
         var from = _camera.GlobalTransform.Origin;
         var to = from + _camera.GlobalTransform.Basis.Z * -Range;
-
+        GD.Print("Weapon fired");
         var space = GetWorld3D().DirectSpaceState;
         var result = space.IntersectRay(PhysicsRayQueryParameters3D.Create(from, to));
         if (result.Count > 0)

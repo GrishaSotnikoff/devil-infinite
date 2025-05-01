@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ii88slxenuju"]
+[gd_scene load_steps=7 format=3 uid="uid://ii88slxenuju"]
 
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="1_r150o"]
 [ext_resource type="Script" uid="uid://b1jeintkkylg0" path="res://Models/Player.cs" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://dgfj5uyppx65l" path="res://Scenes/Weapon.tscn" id="3_kln2b"]
 
 [sub_resource type="Environment" id="Environment_idj7w"]
 
@@ -27,4 +28,42 @@ script = ExtResource("2_idj7w")
 shape = SubResource("CapsuleShape3D_rgh2o")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602009, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11784, 0.227598)
+
+[node name="Weapon" parent="Player" instance=ExtResource("3_kln2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.340805, 0.883309, -0.173585)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0177664, 0.999842, 0, -0.999842, -0.0177664, 0, 6.52879, 0)
+spot_range = 9.28088
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(0.192162, 0.171801, 0, 7.28972, -0.00452879, 0, 0, 0, 9.33361, -6.73619, 5.55425, 0)
+mesh = SubResource("PlaneMesh_kln2b")
+skeleton = NodePath("../../StaticBody3D2")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9532, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
+transform = Transform3D(0.192162, 0.171801, 0, 7.28972, -0.00452879, 0, 0, 0, 9.33361, -6.73619, 5.55425, 0)
+mesh = SubResource("PlaneMesh_kln2b")
+skeleton = NodePath("../../StaticBody3D2")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.0691123, 0, -0.997609, 0, 1, 0, 0.997609, 0, -0.0691123, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4"]
+transform = Transform3D(0.192162, 0.171801, 0, 7.28972, -0.00452879, 0, 0, 0, 9.33361, -6.73619, 5.55425, 0)
+mesh = SubResource("PlaneMesh_kln2b")
+skeleton = NodePath("../../StaticBody3D2")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
+transform = Transform3D(0.0022219, 0, 0.973619, 0, 1, 0, 0.0930418, 0, -0.0232507, 0, 0, 10.0593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5"]
+transform = Transform3D(0.192162, 0.171801, 0, 7.28972, -0.00452879, 0, 0, 0, 9.33361, -6.73619, 5.55425, 0)
+mesh = SubResource("PlaneMesh_kln2b")
+skeleton = NodePath("../../StaticBody3D2")
