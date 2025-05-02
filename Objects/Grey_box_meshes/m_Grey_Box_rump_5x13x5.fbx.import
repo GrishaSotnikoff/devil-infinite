@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://buru6c0vu5j4w"
-path="res://.godot/imported/m_Grey_Box_rump_5x13x5.fbx-64d3ce9ce41347f2ef004985a099883b.scn"
+path="res://.godot/imported/m_Grey_Box_rump_5x13x5.fbx-aab5ef520a34f2a178152949e87f1e49.scn"
 
 [deps]
 
-source_file="res://Objects/m_Grey_Box_rump_5x13x5.fbx"
-dest_files=["res://.godot/imported/m_Grey_Box_rump_5x13x5.fbx-64d3ce9ce41347f2ef004985a099883b.scn"]
+source_file="res://Objects/Grey_box_meshes/m_Grey_Box_rump_5x13x5.fbx"
+dest_files=["res://.godot/imported/m_Grey_Box_rump_5x13x5.fbx-aab5ef520a34f2a178152949e87f1e49.scn"]
 
 [params]
 

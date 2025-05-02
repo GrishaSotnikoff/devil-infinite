@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3w148ry42kgy"
-path="res://.godot/imported/m_Grey_Box_Wall_2x100x8.fbx-befe3f9840c53e2e49302802b158f739.scn"
+path="res://.godot/imported/m_Grey_Box_Wall_2x100x8.fbx-27b8235370068e5e7e5eec9df19cf576.scn"
 
 [deps]
 
-source_file="res://Objects/m_Grey_Box_Wall_2x100x8.fbx"
-dest_files=["res://.godot/imported/m_Grey_Box_Wall_2x100x8.fbx-befe3f9840c53e2e49302802b158f739.scn"]
+source_file="res://Objects/Grey_box_meshes/m_Grey_Box_Wall_2x100x8.fbx"
+dest_files=["res://.godot/imported/m_Grey_Box_Wall_2x100x8.fbx-27b8235370068e5e7e5eec9df19cf576.scn"]
 
 [params]
 

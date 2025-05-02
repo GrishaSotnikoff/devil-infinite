@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cuvy5kis6eysi"
-path="res://.godot/imported/m_Grey_Box_ground_plane_50x50x0.fbx-a97033ab4e9b28c67b6b32d9fd1be7ee.scn"
+path="res://.godot/imported/m_Grey_Box_ground_plane_50x50x0.fbx-e2858f45ef28ffe6afc3d08ff03ba121.scn"
 
 [deps]
 
-source_file="res://Objects/m_Grey_Box_ground_plane_50x50x0.fbx"
-dest_files=["res://.godot/imported/m_Grey_Box_ground_plane_50x50x0.fbx-a97033ab4e9b28c67b6b32d9fd1be7ee.scn"]
+source_file="res://Objects/Grey_box_meshes/m_Grey_Box_ground_plane_50x50x0.fbx"
+dest_files=["res://.godot/imported/m_Grey_Box_ground_plane_50x50x0.fbx-e2858f45ef28ffe6afc3d08ff03ba121.scn"]
 
 [params]
 
