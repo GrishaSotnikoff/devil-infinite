@@ -1,9 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://hho31y2a0bf2"]
+[gd_scene load_steps=10 format=3 uid="uid://hho31y2a0bf2"]
 
+[ext_resource type="Texture2D" uid="uid://bcx8cr6whnppq" path="res://Textures/testLevel1Wall.png" id="1_8wtdv"]
 [ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="1_xrrax"]
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="2_i1kli"]
+[ext_resource type="Texture2D" uid="uid://fec2yrfeem23" path="res://Textures/TestLevel1ground.png" id="2_pu8o7"]
+[ext_resource type="Texture2D" uid="uid://cew3y1fdmup5g" path="res://Textures/CaveLavaRocks.png" id="3_ok5u4"]
+[ext_resource type="PackedScene" uid="uid://ctuudycvufhpw" path="res://Scenes/Enemy.tscn" id="3_yq4yk"]
 
 [sub_resource type="Environment" id="Environment_i1kli"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrrax"]
+diffuse_mode = 1
+albedo_texture = ExtResource("1_8wtdv")
+subsurf_scatter_strength = 1.0
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar_sharpness = 0.435275
+uv1_world_triplanar = true
+uv2_scale = Vector3(10, 10, 10)
+texture_filter = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ok5u4"]
+render_priority = 1
+disable_fog = true
+albedo_texture = ExtResource("2_pu8o7")
+normal_enabled = true
+anisotropy_enabled = true
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.03
+subsurf_scatter_skin_mode = true
+subsurf_scatter_texture = ExtResource("3_ok5u4")
+refraction_enabled = true
+uv1_scale = Vector3(10, 10, 10)
+uv1_offset = Vector3(0.995, 0, 0)
+uv2_scale = Vector3(10, 10, 10)
 
 [node name="Test level 1" type="Node3D"]
 
@@ -24,6 +53,7 @@ size = Vector3(12.5, 2.5, 1)
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.25, 1.7688, -4)
 use_collision = true
 size = Vector3(12.5, 5, 1)
+material = SubResource("StandardMaterial3D_xrrax")
 
 [node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("1_xrrax")]
 
@@ -31,6 +61,7 @@ size = Vector3(12.5, 5, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30.2312, 0)
 use_collision = true
 size = Vector3(25, 59.5, 25)
+material = SubResource("StandardMaterial3D_ok5u4")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 9.51157, -11.5)
@@ -56,3 +87,15 @@ DashDuration = 0.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.720916, -0.324469, 0.612372, 0.683013, -0.183013, 0.707107, -0.117362, 0.928023, 0.353554, 5, 17, -1.5)
+
+[node name="Enemy" parent="." instance=ExtResource("3_yq4yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87848, 0, 11.4119)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_yq4yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5854, 0, 11.4119)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_yq4yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87848, 0, -11.0323)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_yq4yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1698, 0, -11.1989)

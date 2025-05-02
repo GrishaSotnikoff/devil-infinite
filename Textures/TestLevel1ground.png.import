@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cew3y1fdmup5g"
-path.s3tc="res://.godot/imported/CaveLavaRocks.png-f5518cdcd8d3057b6346f7ac743b7640.s3tc.ctex"
+uid="uid://fec2yrfeem23"
+path.s3tc="res://.godot/imported/TestLevel1ground.png-c0e1106f73441be2d9c41e5900245e88.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/CaveLavaRocks.png"
-dest_files=["res://.godot/imported/CaveLavaRocks.png-f5518cdcd8d3057b6346f7ac743b7640.s3tc.ctex"]
+source_file="res://Textures/TestLevel1ground.png"
+dest_files=["res://.godot/imported/TestLevel1ground.png-c0e1106f73441be2d9c41e5900245e88.s3tc.ctex"]
 
 [params]
 

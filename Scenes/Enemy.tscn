@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctuudycvufhpw"]
+[gd_scene load_steps=4 format=3 uid="uid://ctuudycvufhpw"]
 
 [ext_resource type="Script" uid="uid://bmk351hvnpfyx" path="res://Models/Enemy.cs" id="1_m1htj"]
 [ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="2_wovta"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wovta"]
 
 [node name="Enemy" type="StaticBody3D"]
 script = ExtResource("1_m1htj")
 
 [node name="Enemy#MeshInstance3D" type="MeshInstance3D" parent="."]
 
-[node name="Enemy#CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.468689, 0)
+shape = SubResource("CapsuleShape3D_wovta")
 
 [node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("2_wovta")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.296143, 0)
