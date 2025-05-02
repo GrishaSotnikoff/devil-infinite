@@ -5,6 +5,6 @@
     <RootNamespace>DevilInfinite</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Scripts\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 </Project>

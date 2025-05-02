@@ -9,7 +9,8 @@ public partial class Player : CharacterBody3D
 	// Movement & look
 	[Export] public float Speed = 5.0f;
 	[Export] public float MouseSensitivity = 0.2f;
-
+	[Export] public float AnimationSpeed { get; set; } = 5f;
+	private AnimationPlayer _animPlayer;
 	// Jumping & gravity
 	[Export] public float JumpVelocity = 5.0f;
 	[Export] public float Gravity = -9.8f;
@@ -57,7 +58,7 @@ public partial class Player : CharacterBody3D
 		// Capture the mouse for look controls
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		_camera = GetNode<Camera3D>("Camera3D");
-
+		_animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		// Initialize stats
 		_hp = MaxHP;
 		_mana = MaxMana;
@@ -66,6 +67,9 @@ public partial class Player : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
+
+
+
 		// 1) Read horizontal input
 		Vector3 dir = Vector3.Zero;
 		if (Input.IsActionPressed("move_forward")) dir -= Transform.Basis.Z;

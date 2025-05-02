@@ -1,14 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://cltvpheoyfl51"]
+[gd_scene load_steps=16 format=3 uid="uid://cltvpheoyfl51"]
 
 [ext_resource type="Script" uid="uid://b1jeintkkylg0" path="res://Models/Player.cs" id="1_5ixxa"]
+[ext_resource type="PackedScene" uid="uid://bkc70sitv68ym" path="res://Scenes/Animation/a_Hands_v1_Fire_spell.tscn" id="2_bhhdu"]
 [ext_resource type="PackedScene" uid="uid://bt6ioesje7hre" path="res://Scenes/m_grey_box_ue_4_mannequin.tscn" id="2_kyqiw"]
 [ext_resource type="Script" uid="uid://dbmqoaf2p4ngj" path="res://Models/FireSpell.cs" id="3_dewec"]
+[ext_resource type="AnimationLibrary" uid="uid://c254oa6oplxad" path="res://Objects/Animation/a_Hands_v1_Fire_spell.fbx" id="3_glx4g"]
 [ext_resource type="PackedScene" uid="uid://4r0fepdlh8lk" path="res://Scenes/RocketProjectile3D.tscn" id="4_5ixxa"]
 [ext_resource type="Script" uid="uid://h8wn2l4dmq2w" path="res://Models/LightningSpell.cs" id="4_nn08x"]
 [ext_resource type="Texture2D" uid="uid://cw31s04niajlq" path="res://Textures/CaveMagma.png" id="6_megsn"]
 [ext_resource type="Texture2D" uid="uid://ckddts0i7itxp" path="res://Textures/CaveToxicSubstance.png" id="7_yoq75"]
-[ext_resource type="PackedScene" uid="uid://7qowm43exm3f" path="res://Objects/m_Grey_Box_Hands_Placeholder.fbx" id="8_ksbbd"]
 [ext_resource type="Script" uid="uid://dj5uxq213cxgf" path="res://Models/SpellCaster.cs" id="8_megsn"]
+[ext_resource type="PackedScene" uid="uid://dv3py5jwh7hgv" path="res://Scenes/LightningSpell.tscn" id="11_ksbbd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glx4g"]
 albedo_texture = ExtResource("6_megsn")
@@ -25,7 +27,16 @@ albedo_texture = ExtResource("6_megsn")
 script = ExtResource("1_5ixxa")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0223986, 1.23589, 0.308747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0366851, 1.23589, 0.200275)
+
+[node name="a_Hands_v1_Fire_spell" parent="Camera3D" instance=ExtResource("2_bhhdu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.32554, 0.0421922)
+
+[node name="FireSpellAnimation" type="AnimationPlayer" parent="Camera3D/a_Hands_v1_Fire_spell"]
+libraries = {
+&"a_Hands_v1_Fire_spell": ExtResource("3_glx4g")
+}
+speed_scale = 2.357
 
 [node name="FireSpell" type="Node3D" parent="Camera3D"]
 script = ExtResource("3_dewec")
@@ -33,9 +44,6 @@ RocketProjectile = ExtResource("4_5ixxa")
 
 [node name="LightningSpell" type="Node3D" parent="Camera3D"]
 script = ExtResource("4_nn08x")
-
-[node name="m_Grey_Box_Hands_Placeholder" parent="Camera3D" instance=ExtResource("8_ksbbd")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0415249, -1.23589, -0.0811646)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
@@ -79,7 +87,6 @@ bones/13/position = Vector3(9.65375e-05, 0.00123325, 2.76584e-05)
 bones/13/rotation = Quaternion(-0.0126886, -0.135727, 0.109348, 0.984612)
 bones/14/position = Vector3(-2.91327e-10, 0.000465829, -1.16541e-10)
 bones/14/rotation = Quaternion(-0.0162573, -0.134161, 0.10618, 0.98512)
-bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(1.96603e-09, 0.000366286, -2.0194e-10)
 bones/15/rotation = Quaternion(-6.35979e-08, 2.79742e-08, 9.79471e-09, 1)
 bones/15/scale = Vector3(1, 1, 1)
@@ -120,7 +127,6 @@ bones/33/rotation = Quaternion(-0.664657, 0.363265, 0.371395, 0.536968)
 bones/33/scale = Vector3(1, 1, 1)
 bones/34/position = Vector3(5.51946e-10, 0.00158457, -7.57294e-11)
 bones/34/rotation = Quaternion(-0.367874, 0.226004, -0.0067943, 0.901967)
-bones/34/scale = Vector3(1, 1, 1)
 bones/35/position = Vector3(-4.36122e-10, 0.00304573, 4.07704e-09)
 bones/35/rotation = Quaternion(-0.097577, -0.123774, 0.257164, 0.953428)
 bones/36/position = Vector3(3.28795e-09, 0.00270795, -6.62852e-09)
@@ -210,7 +216,6 @@ bones/77/rotation = Quaternion(-0.542418, -0.00368872, 0.0434808, 0.838974)
 bones/77/scale = Vector3(1, 1, 1)
 bones/78/position = Vector3(3.61981e-10, 0.00196745, 6.72576e-10)
 bones/78/rotation = Quaternion(-2.68847e-08, 1.70193e-09, 1.04168e-08, 1)
-bones/78/scale = Vector3(1, 1, 1)
 bones/80/position = Vector3(-3.84893e-09, 0.00221796, 3.40392e-09)
 bones/80/rotation = Quaternion(0.992471, -4.38244e-07, -0.122479, 3.34815e-06)
 bones/80/scale = Vector3(1, 1, 1)
@@ -226,6 +231,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o3h8g")
 
 [node name="SpellCaster" type="Node3D" parent="."]
 script = ExtResource("8_megsn")
+AnimationPlayerPath = NodePath("../Camera3D/a_Hands_v1_Fire_spell/FireSpellAnimation")
+
+[node name="LightningSpell" parent="SpellCaster" instance=ExtResource("11_ksbbd")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
@@ -233,5 +241,5 @@ script = ExtResource("8_megsn")
 transform = Transform3D(1, 0, 0, 0, 1.42702, 0, 0, 0, 1, -0.111139, 0.837765, 0)
 shape = SubResource("BoxShape3D_megsn")
 
-[editable path="Camera3D/m_Grey_Box_Hands_Placeholder"]
+[editable path="Camera3D/a_Hands_v1_Fire_spell"]
 [editable path="CharacterBody3D/m_Grey_Box_UE4_Mannequin"]

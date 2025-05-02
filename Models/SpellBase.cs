@@ -9,6 +9,13 @@ public abstract partial class SpellBase : Node3D, ISpell
     [Export] public float Cooldown = 0.5f;
     protected bool _canCast = true;
 
+
+    public override void _Ready()
+    {
+
+        SetProcess(true);
+        GD.Print("[SpellBase] Ready");
+    }
     public override void _Process(double delta) { }
 
     protected async void StartCooldown()

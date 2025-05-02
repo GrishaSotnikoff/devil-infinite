@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqk1ilo0uq5r0"]
+[gd_scene load_steps=16 format=3 uid="uid://dqk1ilo0uq5r0"]
 
 [ext_resource type="PackedScene" uid="uid://3w148ry42kgy" path="res://Objects/m_Grey_Box_Wall_2x100x8.fbx" id="1_p3tm0"]
 [ext_resource type="Texture2D" uid="uid://da8m2em5devg6" path="res://Textures/CaveCracks.png" id="1_tpefv"]
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="2_vyarb"]
 [ext_resource type="Material" uid="uid://fseryn8knpx0" path="res://Textures/new_standard_material_3d1.tres" id="3_7uner"]
+[ext_resource type="PackedScene" uid="uid://ctuudycvufhpw" path="res://Scenes/Enemy.tscn" id="5_xr3so"]
 
 [sub_resource type="Environment" id="Environment_vyarb"]
 
@@ -118,6 +119,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458613, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.352005, 0.935998, 0, -0.935998, -0.352005, 0, 26.0337, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("5_xr3so")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1336, 0, 0)
 
 [editable path="StaticBody3D2/m_Grey_Box_Wall_2x100x16"]
 [editable path="StaticBody3D2/m_Grey_Box_Wall_2x100x17"]

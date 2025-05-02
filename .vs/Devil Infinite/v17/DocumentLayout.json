@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\projects\\devil-infinite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\scripts\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:scripts\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\rocketprojectile3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\rocketprojectile3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\overlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\overlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\parry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\parry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\lightningspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\lightningspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +46,114 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RocketProjectile3D.cs",
+              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\RocketProjectile3D.cs",
+              "RelativeDocumentMoniker": "Models\\RocketProjectile3D.cs",
+              "ToolTip": "C:\\projects\\devil-infinite\\Models\\RocketProjectile3D.cs",
+              "RelativeToolTip": "Models\\RocketProjectile3D.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T22:52:47.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Parry.cs",
+              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Parry.cs",
+              "RelativeDocumentMoniker": "Models\\Parry.cs",
+              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Parry.cs",
+              "RelativeToolTip": "Models\\Parry.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T22:52:41.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LightningSpell.cs",
+              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\LightningSpell.cs",
+              "RelativeDocumentMoniker": "Models\\LightningSpell.cs",
+              "ToolTip": "C:\\projects\\devil-infinite\\Models\\LightningSpell.cs",
+              "RelativeToolTip": "Models\\LightningSpell.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T22:52:22.716Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Models\\MainMenu.cs",
+              "ToolTip": "C:\\projects\\devil-infinite\\Models\\MainMenu.cs",
+              "RelativeToolTip": "Models\\MainMenu.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T22:51:44.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SceneManager.cs",
+              "DocumentMoniker": "C:\\projects\\devil-infinite\\Scripts\\SceneManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\SceneManager.cs",
+              "ToolTip": "C:\\projects\\devil-infinite\\Scripts\\SceneManager.cs",
+              "RelativeToolTip": "Scripts\\SceneManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T22:42:03.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Overlay.cs",
+              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Overlay.cs",
+              "RelativeDocumentMoniker": "Models\\Overlay.cs",
+              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Overlay.cs",
+              "RelativeToolTip": "Models\\Overlay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T22:39:13.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Weapon.cs",
               "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Weapon.cs",
               "RelativeDocumentMoniker": "Models\\Weapon.cs",
               "ToolTip": "C:\\projects\\devil-infinite\\Models\\Weapon.cs",
               "RelativeToolTip": "Models\\Weapon.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAewCAAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwCAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T12:33:33.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T12:33:33.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Player.cs",
               "RelativeDocumentMoniker": "Models\\Player.cs",
               "ToolTip": "C:\\projects\\devil-infinite\\Models\\Player.cs",
               "RelativeToolTip": "Models\\Player.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwCkAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAwwFQAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T12:29:23.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T12:29:23.749Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Enemy.cs",
               "RelativeDocumentMoniker": "Models\\Enemy.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Enemy.cs",
-              "RelativeToolTip": "Models\\Enemy.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Enemy.cs*",
+              "RelativeToolTip": "Models\\Enemy.cs*",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T12:29:01.479Z",
               "EditorCaption": ""

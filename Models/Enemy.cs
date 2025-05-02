@@ -23,7 +23,15 @@ public partial class Enemy : StaticBody3D
         {
             var direction = (_player.GlobalPosition - GlobalPosition).Normalized();
             GlobalPosition += direction * Speed * (float)delta;
-            //GD.Print($"[Enemy] Moving by {direction * Speed * (float)delta}");
+
+            //rotate towards the player
+            var lookAt = _player.GlobalPosition - GlobalPosition;
+            lookAt.Y = 0; // Keep the enemy upright
+            if (lookAt.LengthSquared() > 0)
+            {
+                var rotation = lookAt.AngleTo(lookAt); 
+                Rotation = new Vector3(0, rotation, 0);
+            }
         }
     }
 
