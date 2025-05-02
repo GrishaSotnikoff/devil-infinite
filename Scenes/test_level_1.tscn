@@ -51,6 +51,8 @@ height = 14.671
 
 [node name="Player" parent="." instance=ExtResource("2_i1kli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+DashMultiplier = 4.0
+DashDuration = 0.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.720916, -0.324469, 0.612372, 0.683013, -0.183013, 0.707107, -0.117362, 0.928023, 0.353554, 5, 17, -1.5)

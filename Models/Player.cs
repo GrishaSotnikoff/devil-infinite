@@ -2,7 +2,8 @@ using Godot;
 using System;
 
 /// <summary>
-/// Handles player movement, camera control, jumping, and HP/Mana stats with UI updates.
+/// Handles player movement, camera control, jumping (with double‐jump), dashing,
+/// and HP/Mana stats with UI updates.
 /// </summary>
 public partial class Player : CharacterBody3D
 {
@@ -10,17 +11,22 @@ public partial class Player : CharacterBody3D
 	[Export] public float Speed = 5.0f;
 	[Export] public float MouseSensitivity = 0.2f;
 	[Export] public float AnimationSpeed { get; set; } = 5f;
-	private AnimationPlayer _animPlayer;
+
 	// Jumping & gravity
 	[Export] public float JumpVelocity = 5.0f;
 	[Export] public float Gravity = -9.8f;
+	[Export] public int MaxJumps = 2;  // allow up to double‐jump
+
+	// Dashing
+	[Export] public float DashMultiplier = 2.0f;
+	[Export] public float DashDuration = 1.0f;
+	private float _dashTimer = 0f;
 
 	// Health & mana
 	[Signal] public delegate void StatsChangedEventHandler(int hp, int mana);
 	[Export] public int MaxHP = 100;
 	[Export] public int MaxMana = 100;
-
-	private int _hp ;
+	private int _hp;
 	private int _mana;
 
 	public int HP
@@ -28,8 +34,7 @@ public partial class Player : CharacterBody3D
 		get => _hp;
 		set
 		{
-			GD.Print("[Player] Jump");
-
+			_hp = Mathf.Clamp(value, 0, MaxHP);
 			EmitSignal(nameof(StatsChanged), _hp, _mana);
 		}
 	}
@@ -45,9 +50,10 @@ public partial class Player : CharacterBody3D
 	}
 
 	// Internal state
+	private int _jumpsUsed = 0;
 	private float _rotationX = 0.0f;
 	private Camera3D _camera;
-	private bool _isJumping = false;
+	private AnimationPlayer _animPlayer;
 
 	public override void _Ready()
 	{
@@ -55,68 +61,75 @@ public partial class Player : CharacterBody3D
 		SetPhysicsProcess(true);
 		GD.Print("[Player] Ready");
 
-		// Capture the mouse for look controls
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		_camera = GetNode<Camera3D>("Camera3D");
 		_animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+
 		// Initialize stats
 		_hp = MaxHP;
 		_mana = MaxMana;
-		EmitSignal(nameof(StatsChangedEventHandler), _hp, _mana);
+		EmitSignal(nameof(StatsChanged), _hp, _mana);
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
+		float dt = (float)delta;
 
+		// 0) Reset jumps when grounded
+		if (IsOnFloor())
+		{
+			_jumpsUsed = 0;
+		}
 
+		// 1) Handle dash timing
+		if (Input.IsActionJustPressed("dash") && _dashTimer <= 0f)
+		{
+			_dashTimer = DashDuration;
+			GD.Print("[Player] Dash started");
+		}
+		if (_dashTimer > 0f)
+		{
+			_dashTimer -= dt;
+			if (_dashTimer <= 0f)
+			{
+				_dashTimer = 0f;
+				GD.Print("[Player] Dash ended");
+			}
+		}
 
-		// 1) Read horizontal input
+		// 2) Read horizontal input
 		Vector3 dir = Vector3.Zero;
 		if (Input.IsActionPressed("move_forward")) dir -= Transform.Basis.Z;
 		if (Input.IsActionPressed("move_backward")) dir += Transform.Basis.Z;
 		if (Input.IsActionPressed("move_left")) dir -= Transform.Basis.X;
 		if (Input.IsActionPressed("move_right")) dir += Transform.Basis.X;
-		Vector3 horizontalVel = dir.Normalized() * Speed;
+		Vector3 horizontalVel = dir.Normalized() * Speed * (_dashTimer > 0f ? DashMultiplier : 1f);
 
-		// 2) Manage vertical velocity via a local copy
+		// 3) Manage vertical velocity
 		Vector3 vel = Velocity;
-		if (IsOnFloor())
+		if (Input.IsActionJustPressed("jump") && _jumpsUsed < MaxJumps)
 		{
-			if (Input.IsActionJustPressed("jump"))
-			{
-				vel.Y = JumpVelocity;
-				GD.Print("[Player] Jump");
-				_hp = Mathf.Clamp(HP + 1, 0, MaxHP); // Example: reduce HP on jump
-				_isJumping = true;
-			}
-			else if (!_isJumping)
-			{
-				// Keep grounded when not jumping
-				vel.Y = 0;
-			}
+			vel.Y = JumpVelocity;
+			_jumpsUsed++;
+			GD.Print(_jumpsUsed == 1 ? "[Player] Jump" : "[Player] Double Jump");
+		}
+		else if (IsOnFloor())
+		{
+			// ensure we stick when not mid‐jump
+			vel.Y = 0;
 		}
 		else
 		{
-			// In air: apply gravity
-			vel.Y += Gravity * (float)delta;
+			vel.Y += Gravity * dt;
 		}
 
-		// 3) Combine horizontal and vertical, then assign back
+		// 4) Combine velocities & move
 		vel.X = horizontalVel.X;
 		vel.Z = horizontalVel.Z;
 		Velocity = vel;
-
-		// 4) Move and slide
 		MoveAndSlide();
 
-		// 5) Landing detection
-		if (_isJumping && IsOnFloor())
-		{
-			GD.Print("[Player] Landed");
-			_isJumping = false;
-		}
-
-		// 6) Debug movement
+		// 5) Debug movement
 		if (dir != Vector3.Zero)
 			GD.Print($"[Player] Moving: {Velocity}");
 	}

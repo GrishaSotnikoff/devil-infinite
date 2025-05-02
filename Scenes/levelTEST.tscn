@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dqk1ilo0uq5r0"]
 
-[ext_resource type="PackedScene" uid="uid://3w148ry42kgy" path="res://Objects/m_Grey_Box_Wall_2x100x8.fbx" id="1_p3tm0"]
+[ext_resource type="PackedScene" uid="uid://3w148ry42kgy" path="res://Objects/Grey_box_meshes/m_Grey_Box_Wall_2x100x8.fbx" id="1_p3tm0"]
 [ext_resource type="Texture2D" uid="uid://da8m2em5devg6" path="res://Textures/CaveCracks.png" id="1_tpefv"]
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="2_vyarb"]
 [ext_resource type="Material" uid="uid://fseryn8knpx0" path="res://Textures/new_standard_material_3d1.tres" id="3_7uner"]

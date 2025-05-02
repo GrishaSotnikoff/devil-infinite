@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctuudycvufhpw"]
 
 [ext_resource type="Script" uid="uid://bmk351hvnpfyx" path="res://Models/Enemy.cs" id="1_m1htj"]
-[ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/m_Grey_Box_UE4_Mannequin.fbx" id="2_wovta"]
+[ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="2_wovta"]
 
 [node name="Enemy" type="StaticBody3D"]
 script = ExtResource("1_m1htj")
