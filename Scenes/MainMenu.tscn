@@ -43,6 +43,7 @@ theme_override_font_sizes/font_size = 38
 text = "Options"
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer/Options"]
+layout_mode = 0
 offset_top = 6.0
 offset_right = 290.0
 offset_bottom = 56.0
@@ -55,6 +56,7 @@ theme_override_font_sizes/font_size = 38
 text = "Quit"
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer/Quit"]
+layout_mode = 0
 offset_top = 6.0
 offset_right = 290.0
 offset_bottom = 56.0
