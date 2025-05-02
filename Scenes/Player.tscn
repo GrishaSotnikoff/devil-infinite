@@ -45,7 +45,6 @@ RocketProjectile = ExtResource("4_5ixxa")
 
 [node name="LightningSpell" type="Node3D" parent="Camera3D"]
 script = ExtResource("4_nn08x")
-Damage = 5.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
