@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Diagnostics;
+using System.Threading;
 
 /// <summary>
 /// Routes mapped input actions to individual spell components, with logging.
@@ -58,8 +60,11 @@ public partial class SpellCaster : Node3D
 		{
 			GD.Print($"[SpellCaster] Playing animation {_animations[0]}");
 			_animPlayer.Play(_animations[0]);
+			//stop animation aftere 3 seconds
+			
 			GD.Print("[SpellCaster] CastLightning");
 			_lightningSpell.Cast();
+			
 		}
 
 		if (Input.IsActionJustPressed("parry"))

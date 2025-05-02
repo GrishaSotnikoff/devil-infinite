@@ -1,10 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfu1aawnb1clo"]
+[gd_scene load_steps=3 format=3 uid="uid://cfu1aawnb1clo"]
 
 [ext_resource type="Script" uid="uid://c4elpyoxejynx" path="res://Models/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="PackedScene" uid="uid://fe1wpmcxja8g" path="res://Scenes/scene_manager.tscn" id="2_853f1"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
-
-[node name="Area3D" type="Area3D" parent="."]
+[node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_tt5f1")
 
 [node name="Panel" type="Panel" parent="."]
@@ -30,12 +29,23 @@ size_flags_vertical = 7
 theme_override_font_sizes/font_size = 38
 text = "Start"
 
+[node name="Button" type="Button" parent="Panel/VBoxContainer/Start"]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 290.0
+offset_bottom = 56.0
+
 [node name="Options" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 7
 theme_override_font_sizes/font_size = 38
 text = "Options"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/Options"]
+offset_top = 6.0
+offset_right = 290.0
+offset_bottom = 56.0
 
 [node name="Quit" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -44,4 +54,9 @@ size_flags_vertical = 7
 theme_override_font_sizes/font_size = 38
 text = "Quit"
 
-[connection signal="focus_entered" from="Panel/VBoxContainer/Devil Infinite" to="Area3D" method="_on_devil_infinite_focus_entered"]
+[node name="Button" type="Button" parent="Panel/VBoxContainer/Quit"]
+offset_top = 6.0
+offset_right = 290.0
+offset_bottom = 56.0
+
+[node name="SceneManager" parent="." instance=ExtResource("2_853f1")]

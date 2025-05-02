@@ -13,21 +13,22 @@ public partial class Enemy : StaticBody3D, IDamageable
         GD.Print($"[Enemy] {_player.Name} target acquired");
     }
 
-
     public override void _PhysicsProcess(double delta)
     {
         if (_player == null) return;
 
-        // chase
-        var dir = (_player.GlobalPosition - GlobalPosition).Normalized();
-        GlobalPosition += dir * Speed * (float)delta;
+        // 1️⃣ Chase the player
+        Vector3 direction = (_player.GlobalPosition - GlobalPosition).Normalized();
+        GlobalPosition += direction * Speed * (float)delta;
 
-        // look rotation (fixed; the original AngleTo was wrong)
-        var lookAt = _player.GlobalPosition - GlobalPosition;
-        lookAt.Y = 0;
-        if (lookAt != Vector3.Zero)
-            LookAt(GlobalPosition + lookAt, Vector3.Up);
+        // 2️⃣ Rotate to face the player horizontally
+        Vector3 target = _player.GlobalPosition;
+        target.Y = GlobalPosition.Y ;  // Keep the enemy upright
+                                       // Rotate the enemy to face the player
+
+        LookAt(target , Vector3.Up);
     }
+
 
     public void TakeDamage(int amount)
     {

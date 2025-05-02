@@ -6,6 +6,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wovta"]
 
 [node name="Enemy" type="StaticBody3D"]
+axis_lock_linear_y = true
 script = ExtResource("1_m1htj")
 
 [node name="Enemy#MeshInstance3D" type="MeshInstance3D" parent="."]
