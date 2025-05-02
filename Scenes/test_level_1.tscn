@@ -1,26 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://hho31y2a0bf2"]
+[gd_scene load_steps=4 format=3 uid="uid://hho31y2a0bf2"]
 
 [ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="1_xrrax"]
+[ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="2_i1kli"]
+
+[sub_resource type="Environment" id="Environment_i1kli"]
 
 [node name="Test level 1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i1kli")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25, 1.0188, 1)
+use_collision = true
+size = Vector3(3.5, 3.5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.518801, 6)
+use_collision = true
+size = Vector3(12.5, 2.5, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.25, 1.7688, -4)
+use_collision = true
+size = Vector3(12.5, 5, 1)
 
 [node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("1_xrrax")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30.2312, 0)
+use_collision = true
 size = Vector3(25, 59.5, 25)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25, 31.25, 1)
-size = Vector3(3.5, 3.5, 1)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 30.75, 6)
-size = Vector3(12.5, 2.5, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.25, 32, -4)
-size = Vector3(12.5, 5, 1)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 9.51157, -11.5)
@@ -38,3 +48,9 @@ height = 14.671
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 9.51157, 11.5)
 height = 14.671
+
+[node name="Player" parent="." instance=ExtResource("2_i1kli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.720916, -0.324469, 0.612372, 0.683013, -0.183013, 0.707107, -0.117362, 0.928023, 0.353554, 5, 17, -1.5)
