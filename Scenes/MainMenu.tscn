@@ -7,13 +7,18 @@
 script = ExtResource("1_tt5f1")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 784.0
-offset_bottom = 429.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 233.0
+offset_bottom = 224.0
+scale = Vector2(1.845, 1.815)
 
 [node name="Devil Infinite" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -34,6 +39,7 @@ layout_mode = 0
 offset_top = 6.0
 offset_right = 290.0
 offset_bottom = 56.0
+clip_text = true
 
 [node name="Options" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2

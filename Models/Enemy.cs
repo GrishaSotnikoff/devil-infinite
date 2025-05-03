@@ -4,15 +4,30 @@ using System;
 public partial class Enemy : StaticBody3D, IDamageable
 {
     [Export] public float Speed = 2.5f;
+    [Export] public int Damage = 10;    // ← configurable damage
     private int _health = 20;
     private Player _player;
+    public EnemySpawner Spawner { get; set; }
 
     public override void _Ready()
     {
+        // existing setup…
         _player = GetTree().CurrentScene.GetNode<Player>("Player");
-        GD.Print($"[Enemy] {_player.Name} target acquired");
+        GD.Print($"[Enemy] Target is {_player.Name}");
+
+        // Hook the hitbox
+        var hitbox = GetNode<Area3D>("Hitbox");
+        hitbox.BodyEntered += OnHitboxBodyEntered;
     }
 
+    private void OnHitboxBodyEntered(Node3D body)
+    {
+        if (body is Player player)
+        {
+            GD.Print($"[Enemy] {Name} touched {player.Name}, dealing {Damage} damage");
+            player.HP -= Damage;
+        }
+    }
     public override void _PhysicsProcess(double delta)
     {
         if (_player == null) return;
@@ -32,9 +47,19 @@ public partial class Enemy : StaticBody3D, IDamageable
 
     public void TakeDamage(int amount)
     {
-        _health -= amount;
-        GD.Print($"[Enemy] {Name} took {amount} damage! Health: {_health}");
-        if (_health <= 0)
+        if(_player.Mana != 0){
+            _health -= amount;
+            GD.Print($"[Enemy] {Name} took {amount} damage! Health: {_health}");
+        }
+
+
+        // Spend 10 mana
+        _player.Mana -= amount;
+        if (_health <= 0){
+            // Ask the spawner to respawn after delay
+            if (Spawner != null)
+                Spawner.RequestRespawn();
             QueueFree();
+        }
     }
 }

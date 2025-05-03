@@ -27,6 +27,7 @@ public partial class LightningSpell : SpellBase
 			&& col.As<Node>() is Node hit) // Fix: Use As<Node>() to safely cast Variant to Node
 		{
 			GD.Print($"[LightningSpell] Hit collider: {hit.Name}, Type: {hit.GetType().Name}");
+			//GetTree().Root.GetNode<VFXManager>("VFXManager").Spawn("Explosion", to);
 
 			// Search up the parent tree for IDamageable
 			Node damageTarget = hit;

@@ -3,19 +3,18 @@ using System;
 
 /// <summary>
 /// Handles player movement, camera control, jumping (with double‐jump), dashing,
-/// and HP/Mana stats with UI updates.
+/// and HP/Mana stats (with adjustable mana regeneration).
 /// </summary>
 public partial class Player : CharacterBody3D
 {
 	// Movement & look
 	[Export] public float Speed = 5.0f;
 	[Export] public float MouseSensitivity = 0.2f;
-	[Export] public float AnimationSpeed { get; set; } = 5f;
 
 	// Jumping & gravity
 	[Export] public float JumpVelocity = 5.0f;
 	[Export] public float Gravity = -9.8f;
-	[Export] public int MaxJumps = 2;  // allow up to double‐jump
+	[Export] public int MaxJumps = 2;
 
 	// Dashing
 	[Export] public float DashMultiplier = 2.0f;
@@ -26,8 +25,11 @@ public partial class Player : CharacterBody3D
 	[Signal] public delegate void StatsChangedEventHandler(int hp, int mana);
 	[Export] public int MaxHP = 100;
 	[Export] public int MaxMana = 100;
+	[Export] public float ManaRegenRate = 5f; // mana points per second
+
 	private int _hp;
 	private int _mana;
+	private float _manaRegenAccumulator = 0f;
 
 	public int HP
 	{
@@ -57,7 +59,6 @@ public partial class Player : CharacterBody3D
 
 	public override void _Ready()
 	{
-		// Enable physics processing
 		SetPhysicsProcess(true);
 		GD.Print("[Player] Ready");
 
@@ -75,13 +76,24 @@ public partial class Player : CharacterBody3D
 	{
 		float dt = (float)delta;
 
-		// 0) Reset jumps when grounded
-		if (IsOnFloor())
+		// 0) Mana regeneration
+		if (_mana < MaxMana && ManaRegenRate > 0f)
 		{
-			_jumpsUsed = 0;
+			_manaRegenAccumulator += ManaRegenRate * dt;
+			if (_manaRegenAccumulator >= 1f)
+			{
+				int toRegen = (int)_manaRegenAccumulator;
+				_manaRegenAccumulator -= toRegen;
+				Mana += toRegen; // use the property to emit signal
+				GD.Print($"[Player] Regenerated {toRegen} mana (now {Mana}/{MaxMana})");
+			}
 		}
 
-		// 1) Handle dash timing
+		// 1) Reset jumps when grounded
+		if (IsOnFloor())
+			_jumpsUsed = 0;
+
+		// 2) Dash logic
 		if (Input.IsActionJustPressed("dash") && _dashTimer <= 0f)
 		{
 			_dashTimer = DashDuration;
@@ -91,13 +103,10 @@ public partial class Player : CharacterBody3D
 		{
 			_dashTimer -= dt;
 			if (_dashTimer <= 0f)
-			{
-				_dashTimer = 0f;
 				GD.Print("[Player] Dash ended");
-			}
 		}
 
-		// 2) Read horizontal input
+		// 3) Movement input
 		Vector3 dir = Vector3.Zero;
 		if (Input.IsActionPressed("move_forward")) dir -= Transform.Basis.Z;
 		if (Input.IsActionPressed("move_backward")) dir += Transform.Basis.Z;
@@ -105,7 +114,7 @@ public partial class Player : CharacterBody3D
 		if (Input.IsActionPressed("move_right")) dir += Transform.Basis.X;
 		Vector3 horizontalVel = dir.Normalized() * Speed * (_dashTimer > 0f ? DashMultiplier : 1f);
 
-		// 3) Manage vertical velocity
+		// 4) Jumping & gravity
 		Vector3 vel = Velocity;
 		if (Input.IsActionJustPressed("jump") && _jumpsUsed < MaxJumps)
 		{
@@ -115,7 +124,6 @@ public partial class Player : CharacterBody3D
 		}
 		else if (IsOnFloor())
 		{
-			// ensure we stick when not mid‐jump
 			vel.Y = 0;
 		}
 		else
@@ -123,13 +131,12 @@ public partial class Player : CharacterBody3D
 			vel.Y += Gravity * dt;
 		}
 
-		// 4) Combine velocities & move
+		// 5) Apply movement
 		vel.X = horizontalVel.X;
 		vel.Z = horizontalVel.Z;
 		Velocity = vel;
 		MoveAndSlide();
 
-		// 5) Debug movement
 		if (dir != Vector3.Zero)
 			GD.Print($"[Player] Moving: {Velocity}");
 	}

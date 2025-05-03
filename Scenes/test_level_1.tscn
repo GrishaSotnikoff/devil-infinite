@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hho31y2a0bf2"]
+[gd_scene load_steps=11 format=3 uid="uid://hho31y2a0bf2"]
 
 [ext_resource type="Texture2D" uid="uid://bcx8cr6whnppq" path="res://Textures/testLevel1Wall.png" id="1_8wtdv"]
 [ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="1_xrrax"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://fec2yrfeem23" path="res://Textures/TestLevel1ground.png" id="2_pu8o7"]
 [ext_resource type="Texture2D" uid="uid://cew3y1fdmup5g" path="res://Textures/CaveLavaRocks.png" id="3_ok5u4"]
 [ext_resource type="PackedScene" uid="uid://ctuudycvufhpw" path="res://Scenes/Enemy.tscn" id="3_yq4yk"]
+[ext_resource type="PackedScene" uid="uid://d0bl5uw18ufn2" path="res://Scenes/EnemySpawner.tscn" id="7_xrrax"]
 
 [sub_resource type="Environment" id="Environment_i1kli"]
 
@@ -88,14 +89,23 @@ DashDuration = 0.5
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.720916, -0.324469, 0.612372, 0.683013, -0.183013, 0.707107, -0.117362, 0.928023, 0.353554, 5, 17, -1.5)
 
-[node name="Enemy" parent="." instance=ExtResource("3_yq4yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87848, 0, 11.4119)
+[node name="EnemySpawner" parent="." instance=ExtResource("7_xrrax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97802, 2.06327, 9.55921)
+EnemyScene = ExtResource("3_yq4yk")
 
-[node name="Enemy2" parent="." instance=ExtResource("3_yq4yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5854, 0, 11.4119)
+[node name="EnemySpawner2" parent="." instance=ExtResource("7_xrrax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.18747, 2.06327, 9.55921)
+EnemyScene = ExtResource("3_yq4yk")
 
-[node name="Enemy3" parent="." instance=ExtResource("3_yq4yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87848, 0, -11.0323)
+[node name="EnemySpawner3" parent="." instance=ExtResource("7_xrrax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97802, 2.06327, -9.4128)
+EnemyScene = ExtResource("3_yq4yk")
 
-[node name="Enemy4" parent="." instance=ExtResource("3_yq4yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1698, 0, -11.1989)
+[node name="EnemySpawner4" parent="." instance=ExtResource("7_xrrax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76463, 2.06327, -8.49774)
+EnemyScene = ExtResource("3_yq4yk")
+
+[editable path="EnemySpawner"]
+[editable path="EnemySpawner2"]
+[editable path="EnemySpawner3"]
+[editable path="EnemySpawner4"]
