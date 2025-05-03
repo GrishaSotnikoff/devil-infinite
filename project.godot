@@ -29,6 +29,10 @@ window/size/initial_position_type=0
 
 project/assembly_name="Devil Infinite"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
+
 [input]
 
 move_forward={

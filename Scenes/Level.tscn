@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmv8wld2qnfkl"]
+
+[ext_resource type="Script" uid="uid://cdyctl6a0yvsp" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fuudy"]
+[ext_resource type="Texture2D" uid="uid://fec2yrfeem23" path="res://Textures/TestLevel1ground.png" id="2_5rrr5"]
+[ext_resource type="Resource" uid="uid://5dsbknj4co4x" path="res://Objects/Levels/data.hterrain" id="2_xylue"]
+[ext_resource type="Script" uid="uid://cc230fqyhgfil" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_tj5wv"]
+[ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="4_ienac"]
+[ext_resource type="Texture2D" uid="uid://bcx8cr6whnppq" path="res://Textures/testLevel1Wall.png" id="6_or7tv"]
+[ext_resource type="Shader" uid="uid://d3xorfde5kcmq" path="res://Shaders/Water.gdshader" id="9_or7tv"]
+[ext_resource type="Script" uid="uid://dhb200c4t5ehs" path="res://Shaders/WaterAnimators.cs" id="10_133si"]
+
+[sub_resource type="Resource" id="Resource_5rrr5"]
+script = ExtResource("3_tj5wv")
+mode = 0
+textures = [[ExtResource("2_5rrr5")], [ExtResource("6_or7tv")]]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_esopp"]
+render_priority = 1
+shader = ExtResource("9_or7tv")
+shader_parameter/u_time = 2.186
+shader_parameter/u_wave_amplitude = 0.5
+shader_parameter/u_wave_length = 0.456
+shader_parameter/u_wave_speed = 1.273
+shader_parameter/u_wave_direction = Vector2(1, 0)
+shader_parameter/u_wave2_amplitude = 0.2
+shader_parameter/u_wave2_length = 5.0
+shader_parameter/u_wave2_speed = 1.5
+shader_parameter/u_wave2_direction = Vector2(0, 1)
+shader_parameter/u_shallow_color = Color(0, 0.3, 0.6, 1)
+shader_parameter/u_deep_color = Color(0, 0.05, 0.2, 1)
+shader_parameter/u_depth_tint = 0.467
+shader_parameter/u_specular_strength = 0.8
+shader_parameter/u_fresnel_power = 5.0
+shader_parameter/u_light_direction = Vector3(0, -1, 0)
+shader_parameter/u_foam_texture = ExtResource("6_or7tv")
+shader_parameter/u_foam_scale = 3.67
+shader_parameter/u_foam_threshold = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_b10nm"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("10_133si")
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_fuudy")
+ambient_wind = 0.185
+_terrain_data = ExtResource("2_xylue")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_5rrr5")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://cdyctl6a0yvsp"
+
+[node name="Player" parent="." instance=ExtResource("4_ienac")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 213.822, 64.8958, 318.648)
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0431, 13.2649, 29.6238)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.18992, 0.981499, 0.0242851, 0.44966, 0.0649675, 0.890834, 0.872775, 0.180107, -0.45368, 277.496, 228.92, 240.83)
+light_energy = 0.668
+
+[node name="WaterPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(238.19, 0, 0, 0, 15.5257, 0, 0, 0, 147.648, 157.619, -10.1466, 217.651)
+material_override = SubResource("ShaderMaterial_esopp")
+mesh = SubResource("BoxMesh_b10nm")

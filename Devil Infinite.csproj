@@ -4,4 +4,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>DevilInfinite</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Shaders\Water.gdshader" />
+  </ItemGroup>
 </Project>
