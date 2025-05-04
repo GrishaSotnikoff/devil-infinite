@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://bt6ioesje7hre"]
 
-[ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/m_Grey_Box_UE4_Mannequin.fbx" id="1_5k78i"]
+[ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="1_5k78i"]
 
 [node name="m_Grey_Box_UE4_Mannequin" instance=ExtResource("1_5k78i")]

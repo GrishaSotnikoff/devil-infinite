@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwvp6erfiqb2y"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cpgf3"]
-
-[node name="first_terrain"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_cpgf3")

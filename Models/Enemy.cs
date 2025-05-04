@@ -29,6 +29,7 @@ public partial class Enemy : StaticBody3D, IDamageable
     {
         if (body is Player player)
         {
+            //_animPlayer.Play(_animations[2]); play animation here
             GD.Print($"[Enemy] {Name} touched {player.Name}, dealing {Damage} damage");
             player.HP -= Damage;
         }

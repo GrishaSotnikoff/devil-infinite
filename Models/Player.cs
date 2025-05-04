@@ -137,8 +137,8 @@ public partial class Player : CharacterBody3D
 		Velocity = vel;
 		MoveAndSlide();
 
-		if (dir != Vector3.Zero)
-			GD.Print($"[Player] Moving: {Velocity}");
+		//if (dir != Vector3.Zero)
+			//GD.Print($"[Player] Moving: {Velocity}");
 	}
 
 	public override void _Input(InputEvent @event)

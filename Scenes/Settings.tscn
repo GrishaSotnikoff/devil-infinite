@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://de40eusoil8bh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemList" type="ItemList" parent="."]
+clip_contents = false
+layout_mode = 2
+offset_left = 492.0
+offset_top = 7.0
+offset_right = 1572.0
+offset_bottom = 1087.0
+theme_override_font_sizes/font_size = 22
+item_count = 4
+max_columns = 3
+same_column_width = true
+item_0/text = "Music"
+item_0/selectable = false
+item_1/text = "Effects"
+item_1/selectable = false
+item_2/text = "Dialogs"
+item_2/selectable = false
+item_3/selectable = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 492.0
+offset_top = 7.0
+offset_right = 1572.0
+offset_bottom = 1087.0
+theme_override_font_sizes/font_size = 34
+toggle_mode = true
+text = "Volume"
+flat = true
+alignment = 0
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+offset_left = 492.0
+offset_top = 7.0
+offset_right = 1572.0
+offset_bottom = 1087.0
+theme_override_font_sizes/font_size = 34
+toggle_mode = true
+text = "Video"
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 2
+offset_left = 492.0
+offset_top = 7.0
+offset_right = 1572.0
+offset_bottom = 1087.0
+theme_override_font_sizes/font_size = 34
+toggle_mode = true
+text = "Exit"
+flat = true
+alignment = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 7.0
+offset_right = 1992.0
+offset_bottom = 1087.0
