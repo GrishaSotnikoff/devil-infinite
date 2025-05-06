@@ -140,8 +140,13 @@ public partial class Player : CharacterBody3D
 		MoveAndSlide();
 
 		if (dir != Vector3.Zero)
-            if (!_jumping && _runningPlayer.Playing == false)
-                _runningPlayer.Play();
+		{
+			if (_runningPlayer.Playing == false)
+				_runningPlayer.Play();
+		}
+		else {
+              _runningPlayer.Stop();
+        }
         //GD.Print($"[Player] Moving: {Velocity}");
     }
 
