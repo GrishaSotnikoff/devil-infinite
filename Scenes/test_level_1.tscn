@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://hho31y2a0bf2"]
+[gd_scene load_steps=12 format=3 uid="uid://hho31y2a0bf2"]
 
 [ext_resource type="Texture2D" uid="uid://bcx8cr6whnppq" path="res://Textures/testLevel1Wall.png" id="1_8wtdv"]
-[ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="1_xrrax"]
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="2_i1kli"]
 [ext_resource type="Texture2D" uid="uid://cltwcshc8rk8s" path="res://slot0_normal_roughness.png" id="3_6cxfm"]
 [ext_resource type="Script" uid="uid://bj6om2edliumt" path="res://Scripts/GroundShaderController.cs" id="3_lv8wu"]
@@ -50,8 +49,6 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 use_collision = true
 size = Vector3(12.5, 5, 1)
 material = SubResource("StandardMaterial3D_xrrax")
-
-[node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("1_xrrax")]
 
 [node name="CSGBox3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(18.3996, 0, 0, 0, 1, 0, 0, 0, 22.0846, 0, -0.62674, 0)

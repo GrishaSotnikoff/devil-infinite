@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cltvpheoyfl51"]
+[gd_scene load_steps=21 format=3 uid="uid://cltvpheoyfl51"]
 
 [ext_resource type="Script" uid="uid://b1jeintkkylg0" path="res://Models/Player.cs" id="1_5ixxa"]
 [ext_resource type="PackedScene" uid="uid://bkc70sitv68ym" path="res://Scenes/Animation/a_Hands_v1_Fire_spell.tscn" id="2_bhhdu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ckddts0i7itxp" path="res://Textures/CaveToxicSubstance.png" id="7_yoq75"]
 [ext_resource type="Script" uid="uid://dj5uxq213cxgf" path="res://Models/SpellCaster.cs" id="8_megsn"]
 [ext_resource type="PackedScene" uid="uid://dv3py5jwh7hgv" path="res://Scenes/LightningSpell.tscn" id="11_ksbbd"]
+[ext_resource type="AudioStream" uid="uid://d3yuo5oexomdu" path="res://Sounds/running-on-gravel-301880.mp3" id="13_miouo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glx4g"]
 albedo_texture = ExtResource("6_megsn")
@@ -2599,6 +2600,9 @@ AnimationPlayerPath = NodePath("../Camera3D/a_Hands_v1_Fire_spell/FireSpellAnima
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.42702, 0, 0, 0, 1, -0.111139, 0.837765, 0)
 shape = SubResource("BoxShape3D_megsn")
+
+[node name="RunningPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_miouo")
 
 [editable path="Camera3D/a_Hands_v1_Fire_spell"]
 [editable path="CharacterBody3D/m_Grey_Box_UE4_Mannequin"]

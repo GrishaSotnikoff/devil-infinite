@@ -27,7 +27,7 @@ public partial class Player : CharacterBody3D
 	[Export] public int MaxMana = 100;
 	[Export] public float ManaRegenRate = 5f; // mana points per second
 
-	private int _hp;
+    private int _hp;
 	private int _mana;
 	private float _manaRegenAccumulator = 0f;
 
@@ -56,8 +56,9 @@ public partial class Player : CharacterBody3D
 	private float _rotationX = 0.0f;
 	private Camera3D _camera;
 	private AnimationPlayer _animPlayer;
+    AudioStreamPlayer2D _runningPlayer;
 
-	public override void _Ready()
+    public override void _Ready()
 	{
 		SetPhysicsProcess(true);
 		GD.Print("[Player] Ready");
@@ -65,14 +66,14 @@ public partial class Player : CharacterBody3D
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		_camera = GetNode<Camera3D>("Camera3D");
 		_animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-
-		// Initialize stats
-		_hp = MaxHP;
+		_runningPlayer = GetNode<AudioStreamPlayer2D>("RunningPlayer");
+        // Initialize stats
+        _hp = MaxHP;
 		_mana = MaxMana;
 		EmitSignal(nameof(StatsChanged), _hp, _mana);
 	}
-
-	public override void _PhysicsProcess(double delta)
+	bool _jumping = false;
+    public override void _PhysicsProcess(double delta)
 	{
 		float dt = (float)delta;
 
@@ -118,7 +119,8 @@ public partial class Player : CharacterBody3D
 		Vector3 vel = Velocity;
 		if (Input.IsActionJustPressed("jump") && _jumpsUsed < MaxJumps)
 		{
-			vel.Y = JumpVelocity;
+            _jumping = true;
+            vel.Y = JumpVelocity;
 			_jumpsUsed++;
 			GD.Print(_jumpsUsed == 1 ? "[Player] Jump" : "[Player] Double Jump");
 		}
@@ -137,9 +139,11 @@ public partial class Player : CharacterBody3D
 		Velocity = vel;
 		MoveAndSlide();
 
-		//if (dir != Vector3.Zero)
-			//GD.Print($"[Player] Moving: {Velocity}");
-	}
+		if (dir != Vector3.Zero)
+            if (!_jumping && _runningPlayer.Playing == false)
+                _runningPlayer.Play();
+        //GD.Print($"[Player] Moving: {Velocity}");
+    }
 
 	public override void _Input(InputEvent @event)
 	{

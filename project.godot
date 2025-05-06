@@ -13,6 +13,7 @@ config_version=5
 config/name="Devil Infinite"
 run/main_scene="uid://cfu1aawnb1clo"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+boot_splash/image="uid://bjfgbtxh0tmws"
 config/icon="res://icon.svg"
 
 [autoload]

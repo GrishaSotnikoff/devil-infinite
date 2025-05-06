@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bjfgbtxh0tmws"
+path="res://.godot/imported/LoadingScreen.png-b6ed4a942a1da58ca2cb473807127adf.image"
+
+[deps]
+
+source_file="res://Images/LoadingScreen.png"
+dest_files=["res://.godot/imported/LoadingScreen.png-b6ed4a942a1da58ca2cb473807127adf.image"]
+
+[params]
+
