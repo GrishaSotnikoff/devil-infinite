@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://hho31y2a0bf2"]
+[gd_scene load_steps=15 format=3 uid="uid://hho31y2a0bf2"]
 
 [ext_resource type="Texture2D" uid="uid://bcx8cr6whnppq" path="res://Textures/testLevel1Wall.png" id="1_8wtdv"]
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="2_i1kli"]
@@ -6,9 +6,36 @@
 [ext_resource type="Script" uid="uid://bj6om2edliumt" path="res://Scripts/GroundShaderController.cs" id="3_lv8wu"]
 [ext_resource type="PackedScene" uid="uid://ctuudycvufhpw" path="res://Scenes/Enemy.tscn" id="3_yq4yk"]
 [ext_resource type="Texture2D" uid="uid://cbb7cf7hq0bn3" path="res://slot0_albedo_bump.png" id="4_6cxfm"]
+[ext_resource type="Texture2D" uid="uid://b4q3isdipnvgv" path="res://wp4575220.webp" id="4_lv8wu"]
 [ext_resource type="PackedScene" uid="uid://d0bl5uw18ufn2" path="res://Scenes/EnemySpawner.tscn" id="7_xrrax"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6cxfm"]
+panorama = ExtResource("4_lv8wu")
+
+[sub_resource type="Sky" id="Sky_lv8wu"]
+sky_material = SubResource("PanoramaSkyMaterial_6cxfm")
+process_mode = 3
+radiance_size = 6
+
 [sub_resource type="Environment" id="Environment_i1kli"]
+background_mode = 2
+sky = SubResource("Sky_lv8wu")
+sky_custom_fov = 137.0
+ambient_light_source = 3
+ambient_light_energy = 9.9
+reflected_light_source = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_hdr_scale = 4.0
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_density = 0.0218
+volumetric_fog_temporal_reprojection_amount = 0.74
+adjustment_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrrax"]
 diffuse_mode = 1

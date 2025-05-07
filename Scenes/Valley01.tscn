@@ -1,18 +1,51 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf5kip6dbuvcn"]
+[gd_scene load_steps=14 format=3 uid="uid://bqlnxknd6kao4"]
 
+[ext_resource type="Texture2D" uid="uid://b4q3isdipnvgv" path="res://wp4575220.webp" id="1_w2fra"]
 [ext_resource type="Script" uid="uid://cdyctl6a0yvsp" path="res://addons/zylann.hterrain/hterrain.gd" id="1_xm8wu"]
 [ext_resource type="Resource" uid="uid://d1lot5iqavcj0" path="res://Objects/Valley01/data.hterrain" id="2_5xlxl"]
 [ext_resource type="Script" uid="uid://cc230fqyhgfil" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_pk46k"]
 [ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="4_7wm3y"]
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="5_5xlxl"]
+[ext_resource type="Texture2D" uid="uid://cbb7cf7hq0bn3" path="res://slot0_albedo_bump.png" id="6_7wm3y"]
 [ext_resource type="PackedScene" uid="uid://30hpns14s6q5" path="res://Objects/Valley01/Valley_towerV1.fbx" id="6_pk46k"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2p7l1"]
+panorama = ExtResource("1_w2fra")
+
+[sub_resource type="Sky" id="Sky_1a7ff"]
+sky_material = SubResource("PanoramaSkyMaterial_2p7l1")
+radiance_size = 6
+
+[sub_resource type="Environment" id="Environment_k4pjb"]
+background_mode = 2
+background_energy_multiplier = 1.11
+sky = SubResource("Sky_1a7ff")
+reflected_light_source = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0148
+volumetric_fog_ambient_inject = 1.48
+volumetric_fog_temporal_reprojection_amount = 0.665
+adjustment_enabled = true
+
+[sub_resource type="Compositor" id="Compositor_7wm3y"]
 
 [sub_resource type="Resource" id="Resource_5xlxl"]
 script = ExtResource("3_pk46k")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("6_7wm3y")], [null]]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k4pjb")
+compositor = SubResource("Compositor_7wm3y")
 
 [node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("4_7wm3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3)
@@ -116,10 +149,10 @@ transform = Transform3D(5.04463, 0, 0, 0, 1, 0, 0, 0, 5.61763, 2.5, -0.539635, 2
 use_collision = true
 
 [node name="Player" parent="." instance=ExtResource("5_5xlxl")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.59875, 0.119466, 2.80525)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.59875, 13.8392, 2.80525)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.68582, 0.283922, -0.670104, 0.569056, -0.783194, 0.250564, -0.453681, -0.553168, -0.698698, 89.8374, 328.152, 74.5751)
+transform = Transform3D(0.394906, -0.827637, 0.398831, -0.798889, -0.0949781, 0.593932, -0.453681, -0.553168, -0.698698, 89.8374, 328.152, 74.5751)
 shadow_enabled = true
 shadow_bias = 1.06
 shadow_transmittance_bias = 10.393
@@ -284,7 +317,7 @@ script = ExtResource("1_xm8wu")
 _terrain_data = ExtResource("2_5xlxl")
 chunk_size = 32
 collision_enabled = true
-collision_layer = 1
+collision_layer = 7
 collision_mask = 1
 shader_type = "Classic4Lite"
 custom_shader = null
