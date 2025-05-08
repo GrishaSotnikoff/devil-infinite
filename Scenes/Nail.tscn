@@ -1,20 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://c42yvcvr2lv4r"]
+[gd_scene load_steps=10 format=3 uid="uid://c42yvcvr2lv4r"]
 
 [ext_resource type="Script" uid="uid://s21qc2ww8djf" path="res://Models/Nail.cs" id="1_t2nhm"]
+[ext_resource type="PackedScene" uid="uid://7fmx05jy5dd8" path="res://Objects/Nail spell/M_Nail_spell.fbx" id="2_mgnek"]
+[ext_resource type="Texture2D" uid="uid://cbswqopkkcbfw" path="res://Objects/Nail spell/T_Nail_spell_albedo.tga" id="3_dn7ha"]
+[ext_resource type="Texture2D" uid="uid://rcdcgd3s8bk6" path="res://Objects/Nail spell/T_Nail_spell_Emmision.tga" id="4_h6asb"]
+[ext_resource type="Texture2D" uid="uid://cbv4i3tm87hvk" path="res://Objects/Nail spell/T_Nail_spell_ORM.tga" id="5_n1o0b"]
+[ext_resource type="Texture2D" uid="uid://c81uobegm6gtp" path="res://Objects/Nail spell/T_Nail_spell_Normal.tga" id="6_begcn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ardfi"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_ofmvy"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cnlqr"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_t2nhm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu0jf"]
+albedo_texture = ExtResource("3_dn7ha")
+metallic = 1.0
+metallic_texture = ExtResource("5_n1o0b")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("5_n1o0b")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 0.37
+emission_texture = ExtResource("4_h6asb")
+normal_enabled = true
+normal_texture = ExtResource("6_begcn")
 
 [node name="Nail" type="RigidBody3D"]
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_ardfi")
 contact_monitor = true
 script = ExtResource("1_t2nhm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_ofmvy")
+Speed = 80.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_t2nhm")
+transform = Transform3D(0.3, 0, 0, 0, -2.98549e-08, -0.3, 0, 0.683, -1.31134e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_cnlqr")
+
+[node name="M_Nail_spell" parent="." instance=ExtResource("2_mgnek")]
+transform = Transform3D(0.0856966, 0, 0, 0, 0.0856966, 0, 0, 0, 0.0856966, 0, 0, 0)
+
+[node name="M_Nail_spell_asset_low" parent="M_Nail_spell" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lu0jf")
+
+[editable path="M_Nail_spell"]
