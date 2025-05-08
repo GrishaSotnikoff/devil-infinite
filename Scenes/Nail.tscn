@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c42yvcvr2lv4r"]
+
+[ext_resource type="Script" uid="uid://s21qc2ww8djf" path="res://Models/Nail.cs" id="1_t2nhm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ardfi"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ofmvy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t2nhm"]
+
+[node name="Nail" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_ardfi")
+contact_monitor = true
+script = ExtResource("1_t2nhm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ofmvy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_t2nhm")

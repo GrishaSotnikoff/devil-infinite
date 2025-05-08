@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bqlnxknd6kao4"]
+[gd_scene load_steps=17 format=3 uid="uid://bqlnxknd6kao4"]
 
 [ext_resource type="Texture2D" uid="uid://dak3vjkvfkmr" path="res://Images/WallpaperFusion-night-sky-3840x1080.jpg" id="1_w2fra"]
 [ext_resource type="Script" uid="uid://cdyctl6a0yvsp" path="res://addons/zylann.hterrain/hterrain.gd" id="1_xm8wu"]
@@ -7,19 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="4_7wm3y"]
 [ext_resource type="PackedScene" uid="uid://cltvpheoyfl51" path="res://Scenes/Player.tscn" id="5_5xlxl"]
 [ext_resource type="Texture2D" uid="uid://cbb7cf7hq0bn3" path="res://slot0_albedo_bump.png" id="6_7wm3y"]
-[ext_resource type="PackedScene" uid="uid://30hpns14s6q5" path="res://Objects/Valley01/Valley_towerV1.fbx" id="6_pk46k"]
+[ext_resource type="PackedScene" uid="uid://dd7t47ljwhq22" path="res://Objects/Valley01/TowerV1.fbx" id="7_qdexu"]
+[ext_resource type="PackedScene" uid="uid://dbjhgyrqib4t7" path="res://Objects/Valley01/Tower_stones_1.fbx" id="8_1a7ff"]
+[ext_resource type="PackedScene" uid="uid://d0pklvxl3mfe" path="res://Objects/Valley01/Tower_stones_2.fbx" id="9_k4pjb"]
+[ext_resource type="PackedScene" uid="uid://d007vqymau3jg" path="res://Objects/Valley01/Tower_stones_3.fbx" id="10_qgqsy"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2p7l1"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1a7ff"]
 panorama = ExtResource("1_w2fra")
-energy_multiplier = 5.89
 
 [sub_resource type="Sky" id="Sky_1a7ff"]
-sky_material = SubResource("PanoramaSkyMaterial_2p7l1")
+sky_material = SubResource("PanoramaSkyMaterial_1a7ff")
 process_mode = 3
 radiance_size = 6
 
 [sub_resource type="Environment" id="Environment_k4pjb"]
 background_mode = 2
+background_energy_multiplier = 1.11
 sky = SubResource("Sky_1a7ff")
 sky_custom_fov = 100.4
 reflected_light_source = 2
@@ -51,7 +54,6 @@ compositor = SubResource("Compositor_7wm3y")
 
 [node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("4_7wm3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3)
-visible = false
 
 [node name="R side mount" type="Node3D" parent="."]
 transform = Transform3D(32.5374, -23.9495, 81.763, 13.1854, 87.8836, 20.4952, -84.1719, 4.50904, 34.8167, -50.3216, 68.3308, 89.2253)
@@ -154,7 +156,8 @@ use_collision = true
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.59875, 13.8392, 2.80525)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.394906, -0.827637, 0.398831, -0.798889, -0.0949781, 0.593932, -0.453681, -0.553168, -0.698698, 89.8374, 328.152, 74.5751)
+transform = Transform3D(0.532512, -0.538074, 0.653382, -0.804726, -0.0825455, 0.58788, -0.262389, -0.838846, -0.476959, 89.8374, 328.152, 74.5751)
+light_energy = 1.865
 shadow_enabled = true
 shadow_bias = 1.06
 shadow_transmittance_bias = 10.393
@@ -333,5 +336,14 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://cdyctl6a0yvsp"
 
-[node name="Valley_towerV1" parent="." instance=ExtResource("6_pk46k")]
-transform = Transform3D(-25.0339, 0, 28.7617, 0, 38.1305, 0, -28.7617, 0, -25.0339, 449.416, 9.26954e-07, 439.298)
+[node name="TowerV1" parent="." instance=ExtResource("7_qdexu")]
+transform = Transform3D(-18.0737, 0, 23.9446, 0, 30, 0, -23.9446, 0, -18.0737, 449.406, 24.0859, 461.951)
+
+[node name="Tower_stones_1" parent="." instance=ExtResource("8_1a7ff")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="Tower_stones_2" parent="." instance=ExtResource("9_k4pjb")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 441.061, 450.004, 476.817)
+
+[node name="Tower_stones_3" parent="." instance=ExtResource("10_qgqsy")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 439.226, 397.311, 492.17)

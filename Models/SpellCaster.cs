@@ -64,6 +64,7 @@ public partial class SpellCaster : Node3D
 			
 			GD.Print("[SpellCaster] CastLightning");
 			_lightningSpell.Cast();
+
 			
 		}
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://cltvpheoyfl51"]
+[gd_scene load_steps=22 format=3 uid="uid://cltvpheoyfl51"]
 
 [ext_resource type="Script" uid="uid://b1jeintkkylg0" path="res://Models/Player.cs" id="1_5ixxa"]
 [ext_resource type="PackedScene" uid="uid://bkc70sitv68ym" path="res://Scenes/Animation/a_Hands_v1_Fire_spell.tscn" id="2_bhhdu"]
 [ext_resource type="PackedScene" uid="uid://bt6ioesje7hre" path="res://Scenes/m_grey_box_ue_4_mannequin.tscn" id="2_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://c42yvcvr2lv4r" path="res://Scenes/Nail.tscn" id="2_o3h8g"]
 [ext_resource type="Script" uid="uid://dbmqoaf2p4ngj" path="res://Models/FireSpell.cs" id="3_dewec"]
 [ext_resource type="AnimationLibrary" uid="uid://c254oa6oplxad" path="res://Objects/Animation/a_Hands_v1_Fire_spell.fbx" id="3_glx4g"]
 [ext_resource type="PackedScene" uid="uid://4r0fepdlh8lk" path="res://Scenes/RocketProjectile3D.tscn" id="4_5ixxa"]
@@ -2344,6 +2345,8 @@ _data = {
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 collision_layer = 3
 script = ExtResource("1_5ixxa")
+NailScene = ExtResource("2_o3h8g")
+MuzzlePath = NodePath("Muzzle")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0366851, 1.23589, 0.200275)
@@ -2603,6 +2606,9 @@ shape = SubResource("BoxShape3D_megsn")
 
 [node name="RunningPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_miouo")
+
+[node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0484091, 1.26859, -1.5899)
 
 [editable path="Camera3D/a_Hands_v1_Fire_spell"]
 [editable path="CharacterBody3D/m_Grey_Box_UE4_Mannequin"]

@@ -26,6 +26,15 @@ public partial class Player : CharacterBody3D
 	[Export] public int MaxHP = 100;
 	[Export] public int MaxMana = 100;
 	[Export] public float ManaRegenRate = 5f; // mana points per second
+    [Export] public PackedScene NailScene;
+    [Export] public NodePath MuzzlePath;
+    // Internal state
+    private int _jumpsUsed = 0;
+    private float _rotationX = 0.0f;
+    private Camera3D _camera;
+    private AnimationPlayer _animPlayer;
+    AudioStreamPlayer2D _runningPlayer;
+    private Node3D _muzzle;
 
     private int _hp;
 	private int _mana;
@@ -51,19 +60,14 @@ public partial class Player : CharacterBody3D
 		}
 	}
 
-	// Internal state
-	private int _jumpsUsed = 0;
-	private float _rotationX = 0.0f;
-	private Camera3D _camera;
-	private AnimationPlayer _animPlayer;
-    AudioStreamPlayer2D _runningPlayer;
 
     public override void _Ready()
 	{
 		SetPhysicsProcess(true);
 		GD.Print("[Player] Ready");
+        _muzzle = GetNode<Node3D>(MuzzlePath);
 
-		Input.MouseMode = Input.MouseModeEnum.Captured;
+        Input.MouseMode = Input.MouseModeEnum.Captured;
 		_camera = GetNode<Camera3D>("Camera3D");
 		_animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		_runningPlayer = GetNode<AudioStreamPlayer2D>("RunningPlayer");
@@ -165,6 +169,28 @@ public partial class Player : CharacterBody3D
 		{
 			Input.MouseMode = Input.MouseModeEnum.Visible;
 			GD.Print("[Player] Mouse released");
-		}
-	}
+			SceneManager sm = GetTree().Root.GetNode<SceneManager>("SceneManager");
+			sm.GoTo("res://Scenes/MainMenu.tscn");
+        }
+
+        if (@event.IsActionPressed("shoot"))
+            Shoot();
+    }
+
+    private void Shoot()
+    {
+        // instance the nail
+        var nail = NailScene.Instantiate<Nail>();
+
+        // set its starting position
+        nail.GlobalTransform = _muzzle.GlobalTransform;
+
+        // **** HERE’S THE KEY: use the camera’s forward direction ****
+        // In Godot 3D, “forward” is -Z in the basis
+        Vector3 camForward = -_camera.GlobalTransform.Basis.Z;
+        nail.Direction = camForward.Normalized();
+
+        // add it to the scene
+        GetTree().CurrentScene.AddChild(nail);
+    }
 }
