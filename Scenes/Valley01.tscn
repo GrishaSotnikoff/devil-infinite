@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bqlnxknd6kao4"]
 
-[ext_resource type="Texture2D" uid="uid://b4q3isdipnvgv" path="res://wp4575220.webp" id="1_w2fra"]
+[ext_resource type="Texture2D" uid="uid://dak3vjkvfkmr" path="res://Images/WallpaperFusion-night-sky-3840x1080.jpg" id="1_w2fra"]
 [ext_resource type="Script" uid="uid://cdyctl6a0yvsp" path="res://addons/zylann.hterrain/hterrain.gd" id="1_xm8wu"]
 [ext_resource type="Resource" uid="uid://d1lot5iqavcj0" path="res://Objects/Valley01/data.hterrain" id="2_5xlxl"]
 [ext_resource type="Script" uid="uid://cc230fqyhgfil" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_pk46k"]
@@ -11,15 +11,17 @@
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2p7l1"]
 panorama = ExtResource("1_w2fra")
+energy_multiplier = 5.89
 
 [sub_resource type="Sky" id="Sky_1a7ff"]
 sky_material = SubResource("PanoramaSkyMaterial_2p7l1")
+process_mode = 3
 radiance_size = 6
 
 [sub_resource type="Environment" id="Environment_k4pjb"]
 background_mode = 2
-background_energy_multiplier = 1.11
 sky = SubResource("Sky_1a7ff")
+sky_custom_fov = 100.4
 reflected_light_source = 2
 ssr_enabled = true
 ssao_enabled = true
@@ -27,7 +29,7 @@ ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 fog_mode = 1
-fog_density = 1.0
+fog_density = 0.1285
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0148
 volumetric_fog_ambient_inject = 1.48
