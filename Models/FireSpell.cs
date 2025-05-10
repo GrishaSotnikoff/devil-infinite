@@ -24,7 +24,7 @@ public partial class FireSpell : SpellBase
 		var camera = GetParent<Camera3D>();
 		var origin = camera.GlobalTransform.Origin;
 		var basis = camera.GlobalTransform.Basis;
-
+		RocketProjectile.Instantiate();
 		for (int i = 0; i < DefaultPellets; i++)
 		{
 			float angle = (GD.Randf() - 0.5f) * DefaultSpread;

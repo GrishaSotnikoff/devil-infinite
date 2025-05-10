@@ -12,9 +12,10 @@ public partial class VFXManager : Node
         GD.Print("[VFXManager] Ready");
 
         // Preload and register your VFX here
-        RegisterVFX("Explosion", GD.Load<PackedScene>("res://Scenes/ExplosionEffect.tscn"));
-        RegisterVFX("LightningImpact", GD.Load<PackedScene>("res://Scenes/VFX/LightningImpactEffect.tscn"));
+        RegisterVFX("Explosion", GD.Load<PackedScene>("res://VFX/Explosion.tscn"));
+        //RegisterVFX("LightningImpact", GD.Load<PackedScene>("res://Scenes/VFX/LightningImpactEffect.tscn"));
         // Add more as needed
+        GD.Print("[VFXManager] VFX registered");
     }
 
     /// <summary>
@@ -37,6 +38,7 @@ public partial class VFXManager : Node
     /// </summary>
     public void Spawn(string vfxName, Vector3 position)
     {
+        GD.Print($"[VFXManager] Spawn VFX: {vfxName} at {position}");
         if (!_vfxLibrary.ContainsKey(vfxName))
         {
             GD.PrintErr($"[VFXManager] VFX not found: {vfxName}");

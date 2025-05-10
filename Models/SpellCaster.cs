@@ -12,7 +12,8 @@ public partial class SpellCaster : Node3D
 	private LightningSpell _lightningSpell;
 	private Parry _parry;
 	[Export] public NodePath AnimationPlayerPath { get; set; } = "AnimationPlayer";
-	private string[] _animations;
+
+    private string[] _animations;
 
 	private AnimationPlayer _animPlayer;
 

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0pqruamauno1"]
+
+[ext_resource type="Script" uid="uid://uvvlwaukpyma" path="res://Models/Hotbar.cs" id="1_ry1on"]
+[ext_resource type="Texture2D" uid="uid://dthak8md50em5" path="res://Objects/Levels/normal.png" id="2_i2kgl"]
+
+[node name="Hotbar" type="CanvasLayer"]
+script = ExtResource("1_ry1on")
+
+[node name="Bar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Slots" type="HBoxContainer" parent="Bar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Slot1" type="TextureButton" parent="Bar/Slots"]
+layout_mode = 2
+texture_normal = ExtResource("2_i2kgl")
+
+[node name="Slot2" type="TextureButton" parent="Bar/Slots"]
+layout_mode = 2
+texture_normal = ExtResource("2_i2kgl")
+
+[node name="Slot3" type="TextureButton" parent="Bar/Slots"]
+layout_mode = 2
+texture_normal = ExtResource("2_i2kgl")
+
+[node name="Slot4" type="TextureButton" parent="Bar/Slots"]
+layout_mode = 2
+texture_normal = ExtResource("2_i2kgl")

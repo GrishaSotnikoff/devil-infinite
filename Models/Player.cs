@@ -32,7 +32,7 @@ public partial class Player : CharacterBody3D
     private int _jumpsUsed = 0;
     private float _rotationX = 0.0f;
     private Camera3D _camera;
-    private AnimationPlayer _animPlayer;
+    [Export] private AnimationPlayer _animPlayer;
     AudioStreamPlayer2D _runningPlayer;
     private Node3D _muzzle;
 
@@ -69,9 +69,10 @@ public partial class Player : CharacterBody3D
 
         Input.MouseMode = Input.MouseModeEnum.Captured;
 		_camera = GetNode<Camera3D>("Camera3D");
-		_animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		_runningPlayer = GetNode<AudioStreamPlayer2D>("RunningPlayer");
-        // Initialize stats
+		// Initialize stats
+		foreach(var a in _animPlayer.GetAnimationList())
+			GD.Print($"Player animations: {a.GetBaseName()}");
         _hp = MaxHP;
 		_mana = MaxMana;
 		EmitSignal(nameof(StatsChanged), _hp, _mana);
@@ -146,8 +147,11 @@ public partial class Player : CharacterBody3D
 		if (dir != Vector3.Zero)
 		{
 			if (_runningPlayer.Playing == false)
+			{
 				_runningPlayer.Play();
-		}
+			}
+            _animPlayer.Play("idleAnimation");
+        }
 		else {
               _runningPlayer.Stop();
         }
@@ -179,6 +183,7 @@ public partial class Player : CharacterBody3D
 
     private void Shoot()
     {
+		_animPlayer.Stop();
         // instance the nail
         var nail = NailScene.Instantiate<Nail>();
 

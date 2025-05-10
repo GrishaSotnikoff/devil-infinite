@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c42yvcvr2lv4r"]
+[gd_scene load_steps=11 format=3 uid="uid://c42yvcvr2lv4r"]
 
 [ext_resource type="Script" uid="uid://s21qc2ww8djf" path="res://Models/Nail.cs" id="1_t2nhm"]
+[ext_resource type="PackedScene" uid="uid://dsxa3ip62jihd" path="res://VFX/Explosion.tscn" id="2_dn7ha"]
 [ext_resource type="PackedScene" uid="uid://7fmx05jy5dd8" path="res://Objects/Nail spell/M_Nail_spell.fbx" id="2_mgnek"]
 [ext_resource type="Texture2D" uid="uid://cbswqopkkcbfw" path="res://Objects/Nail spell/T_Nail_spell_albedo.tga" id="3_dn7ha"]
 [ext_resource type="Texture2D" uid="uid://rcdcgd3s8bk6" path="res://Objects/Nail spell/T_Nail_spell_Emmision.tga" id="4_h6asb"]
@@ -25,11 +26,16 @@ normal_enabled = true
 normal_texture = ExtResource("6_begcn")
 
 [node name="Nail" type="RigidBody3D"]
+collision_layer = 7
+collision_mask = 7
+input_capture_on_drag = true
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_ardfi")
 contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_t2nhm")
 Speed = 80.0
+ImpactVFX = ExtResource("2_dn7ha")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, -2.98549e-08, -0.3, 0, 0.683, -1.31134e-08, 0, 0, 0)
@@ -40,5 +46,12 @@ transform = Transform3D(0.0856966, 0, 0, 0, 0.0856966, 0, 0, 0, 0.0856966, 0, 0,
 
 [node name="M_Nail_spell_asset_low" parent="M_Nail_spell" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_lu0jf")
+
+[node name="Hibox" type="Area3D" parent="."]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hibox"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_cnlqr")
 
 [editable path="M_Nail_spell"]
