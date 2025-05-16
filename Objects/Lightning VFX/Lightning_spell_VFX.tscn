@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://cqxnqgu5p6v08"]
 
 [ext_resource type="Shader" uid="uid://cvxbc3w6vbo70" path="res://Objects/Lightning VFX/Lightning_spell_VFX.tres" id="1_lq5g0"]
-[ext_resource type="Script" uid="uid://jilxi3ewnw28" path="res://VFEZ-godot-2.0.2/vfez_material_3d.gd" id="1_rtdxl"]
+[ext_resource type="Script" uid="uid://co600ty17fk6c" path="res://VFEZ-godot-2.0.2/vfez_material_3d.gd" id="1_rtdxl"]
 
 [sub_resource type="Shader" id="Shader_rtdxl"]
 resource_name = "VFEZ3DPreview"

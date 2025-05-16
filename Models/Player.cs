@@ -26,17 +26,17 @@ public partial class Player : CharacterBody3D
 	[Export] public int MaxHP = 100;
 	[Export] public int MaxMana = 100;
 	[Export] public float ManaRegenRate = 5f; // mana points per second
-    [Export] public PackedScene NailScene;
-    [Export] public NodePath MuzzlePath;
-    // Internal state
-    private int _jumpsUsed = 0;
-    private float _rotationX = 0.0f;
-    private Camera3D _camera;
-    [Export] private AnimationPlayer _animPlayer;
-    AudioStreamPlayer2D _runningPlayer;
-    private Node3D _muzzle;
+	[Export] public PackedScene NailScene;
+	[Export] public NodePath MuzzlePath;
+	// Internal state
+	private int _jumpsUsed = 0;
+	private float _rotationX = 0.0f;
+	private Camera3D _camera;
+	[Export] private AnimationPlayer _animPlayer;
+	AudioStreamPlayer2D _runningPlayer;
+	private Node3D _muzzle;
 
-    private int _hp;
+	private int _hp;
 	private int _mana;
 	private float _manaRegenAccumulator = 0f;
 
@@ -61,24 +61,24 @@ public partial class Player : CharacterBody3D
 	}
 
 
-    public override void _Ready()
+	public override void _Ready()
 	{
 		SetPhysicsProcess(true);
 		GD.Print("[Player] Ready");
-        _muzzle = GetNode<Node3D>(MuzzlePath);
+		_muzzle = GetNode<Node3D>(MuzzlePath);
 
-        Input.MouseMode = Input.MouseModeEnum.Captured;
+		Input.MouseMode = Input.MouseModeEnum.Captured;
 		_camera = GetNode<Camera3D>("Camera3D");
 		_runningPlayer = GetNode<AudioStreamPlayer2D>("RunningPlayer");
 		// Initialize stats
 		foreach(var a in _animPlayer.GetAnimationList())
 			GD.Print($"Player animations: {a.GetBaseName()}");
-        _hp = MaxHP;
+		_hp = MaxHP;
 		_mana = MaxMana;
 		EmitSignal(nameof(StatsChanged), _hp, _mana);
 	}
 	bool _jumping = false;
-    public override void _PhysicsProcess(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		float dt = (float)delta;
 
@@ -124,8 +124,8 @@ public partial class Player : CharacterBody3D
 		Vector3 vel = Velocity;
 		if (Input.IsActionJustPressed("jump") && _jumpsUsed < MaxJumps)
 		{
-            _jumping = true;
-            vel.Y = JumpVelocity;
+			_jumping = true;
+			vel.Y = JumpVelocity;
 			_jumpsUsed++;
 			GD.Print(_jumpsUsed == 1 ? "[Player] Jump" : "[Player] Double Jump");
 		}
@@ -150,13 +150,13 @@ public partial class Player : CharacterBody3D
 			{
 				_runningPlayer.Play();
 			}
-            _animPlayer.Play("idleAnimation");
-        }
+			_animPlayer.Play("idleAnimation");
+		}
 		else {
-              _runningPlayer.Stop();
-        }
-        //GD.Print($"[Player] Moving: {Velocity}");
-    }
+			  _runningPlayer.Stop();
+		}
+		//GD.Print($"[Player] Moving: {Velocity}");
+	}
 
 	public override void _Input(InputEvent @event)
 	{
@@ -175,27 +175,27 @@ public partial class Player : CharacterBody3D
 			GD.Print("[Player] Mouse released");
 			SceneManager sm = GetTree().Root.GetNode<SceneManager>("SceneManager");
 			sm.GoTo("res://Scenes/MainMenu.tscn");
-        }
+		}
 
-        if (@event.IsActionPressed("shoot"))
-            Shoot();
-    }
+		if (@event.IsActionPressed("shoot"))
+			Shoot();
+	}
 
-    private void Shoot()
-    {
+	private void Shoot()
+	{
 		_animPlayer.Stop();
-        // instance the nail
-        var nail = NailScene.Instantiate<Nail>();
+		// instance the nail
+		var nail = NailScene.Instantiate<Nail>();
 
-        // set its starting position
-        nail.GlobalTransform = _muzzle.GlobalTransform;
+		// set its starting position
+		nail.GlobalTransform = _muzzle.GlobalTransform;
 
-        // **** HERE’S THE KEY: use the camera’s forward direction ****
-        // In Godot 3D, “forward” is -Z in the basis
-        Vector3 camForward = -_camera.GlobalTransform.Basis.Z;
-        nail.Direction = camForward.Normalized();
+		// **** HERE’S THE KEY: use the camera’s forward direction ****
+		// In Godot 3D, “forward” is -Z in the basis
+		Vector3 camForward = -_camera.GlobalTransform.Basis.Z;
+		nail.Direction = camForward.Normalized();
 
-        // add it to the scene
-        GetTree().CurrentScene.AddChild(nail);
-    }
+		// add it to the scene
+		GetTree().CurrentScene.AddChild(nail);
+	}
 }
