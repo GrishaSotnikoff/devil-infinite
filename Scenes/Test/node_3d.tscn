@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cav632brjt8y8"]
+
+[ext_resource type="Texture2D" uid="uid://dak3vjkvfkmr" path="res://Images/WallpaperFusion-night-sky-3840x1080.jpg" id="1_kyfn6"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mr8tt"]
+panorama = ExtResource("1_kyfn6")
+
+[sub_resource type="Sky" id="Sky_41ure"]
+sky_material = SubResource("PanoramaSkyMaterial_mr8tt")
+
+[sub_resource type="Environment" id="Environment_0lxeg"]
+background_mode = 2
+sky = SubResource("Sky_41ure")
+ambient_light_color = Color(0.960351, 0.960351, 0.960351, 1)
+ambient_light_sky_contribution = 0.9
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_wv7om"]
+vertices = PackedVector3Array(-1.04541, -0.241545, 0.84165, -1.04541, -0.241545, -0.90835, -1.29541, -0.241545, -2.15835, -3.04541, -0.241545, -2.15835, -3.04541, -0.241545, 2.09165, -1.29541, -0.241545, 2.09165, 0.954594, -0.241545, 1.09165, 2.95459, -0.241545, 2.09165, 1.20459, -0.241545, -0.90835, 2.95459, -0.241545, -2.15835)
+polygons = [PackedInt32Array(5, 4, 0), PackedInt32Array(0, 4, 1), PackedInt32Array(1, 4, 2), PackedInt32Array(2, 4, 3), PackedInt32Array(0, 6, 5), PackedInt32Array(5, 6, 7), PackedInt32Array(6, 8, 7), PackedInt32Array(7, 8, 9), PackedInt32Array(1, 2, 8), PackedInt32Array(8, 2, 9)]
+cell_height = 0.01
+
+[sub_resource type="BoxMesh" id="BoxMesh_evtmv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5i21k"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0lxeg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.356559, 0.934273, 0, -0.934273, -0.356559, 0, 5.32802, 0)
+shadow_enabled = true
+shadow_normal_bias = 0.0
+shadow_blur = 2.51
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.761545, 0)
+navigation_mesh = SubResource("NavigationMesh_wv7om")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(7.09081, 0, 0, 0, 1, 0, 0, 0, 5.3167, 0, -0.761545, 0)
+mesh = SubResource("BoxMesh_evtmv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130041, 0)
+mesh = SubResource("BoxMesh_5i21k")
+skeleton = NodePath("../..")

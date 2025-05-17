@@ -2908,6 +2908,7 @@ disable_mode = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_m1htj")
+AgentPath = NodePath("")
 
 [node name="Enemy#MeshInstance3D" type="MeshInstance3D" parent="."]
 
@@ -3097,6 +3098,12 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-avoidance_enabled = true
+path_height_offset = -0.5
+path_max_distance = 62.61
+navigation_layers = 255
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0, 0.298039, 1, 1)
+debug_path_custom_point_size = 12.59
 
 [editable path="m_Grey_Box_UE4_Mannequin"]

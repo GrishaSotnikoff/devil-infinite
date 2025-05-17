@@ -1,5 +1,6 @@
 using DevilInfinite.Core;
 using DevilInfinite.Core.Scripts;
+using DevilInfinite.Devil.Core.Common;
 using DevilInfinite.Devil.Interfaces;
 using Godot;
 using System;
@@ -15,22 +16,28 @@ namespace DevilInfinite.Core
         public EnemySpawner Spawner { get; set; }
         private AnimationPlayer _animPlayer;
         private string[] _animations;
+        [Export] public NodePath AgentPath;
+        private NavigationAgent3D _agent;
 
         public override void _Ready()
         {
             SetPhysicsProcess(true);
-
+            _agent = GetNode<NavigationAgent3D>("NavigationAgent3D");
             _player = GetTree().CurrentScene.GetNode<Player>("Player");
-            GD.Print($"[Enemy] Target is {_player.Name}");
 
+
+            var mapRid = GetWorld3D().NavigationMap;
+            GlobalPosition = NavigationServer3D.MapGetClosestPoint(mapRid, GlobalPosition);
+
+            // Snap the initial target as well
+            _agent.TargetPosition = NavigationServer3D.MapGetClosestPoint(mapRid, _player.GlobalPosition);
             _animPlayer = GetNode<AnimationPlayer>("HandsAnimation");
             _animations = _animPlayer.GetAnimationList();
             GD.Print($"[Enemy] Animations: {string.Join(", ", _animations)}");
 
             var hitbox = GetNode<Area3D>("Hitbox");
             hitbox.BodyEntered += OnHitboxBodyEntered;
-
-            GD.Print("[Enemy] Ready");
+            Logger.Log("Ready");
         }
 
         private void OnHitboxBodyEntered(Node3D body)
@@ -45,24 +52,45 @@ namespace DevilInfinite.Core
 
         public override void _PhysicsProcess(double delta)
         {
-            if (_player == null) return;
+            if (_player == null)
+                return;
 
-            // 1) Compute horizontal direction
-            Vector3 dir = (_player.GlobalPosition - GlobalPosition).Normalized();
+            // 1) Update agent target if the player has moved
+            if (_agent.TargetPosition.DistanceTo(_player.GlobalPosition) > 0.5f)
+                _agent.TargetPosition = _player.GlobalPosition;
+
+            // 2) Ensure there’s a path
+            if (_agent.IsNavigationFinished())
+            {
+                // no path or already at target
+                Velocity = Vector3.Zero;
+                MoveAndSlide();
+                return;
+            }
+
+            // 3) Get the next waypoint
+            Vector3 nextPoint = _agent.GetNextPathPosition();
+
+            // 4) Compute horizontal direction
+            Vector3 dir = nextPoint - GlobalPosition;
             dir.Y = 0;
+            if (dir.LengthSquared() < 0.01f)
+            {
+                Velocity = Vector3.Zero;
+                MoveAndSlide();
+                return;
+            }
+            dir = dir.Normalized();
 
-            // 2) Set velocity
+            // 5) Move & slide (physics collisions)
             Velocity = dir * Speed;
-
-            // 3) Move and collide against environment
             MoveAndSlide();
 
-            // 4) Rotate to face the player
-            Vector3 lookAt = _player.GlobalPosition;
-            lookAt.Y = GlobalPosition.Y;
-            lookAt.X = lookAt.Z = 0;
-            LookAt(lookAt, Vector3.Up);
+            // 6) Rotate to face motion
+            LookAt(GlobalPosition + dir, Vector3.Up);
         }
+
+
 
         public void TakeDamage(int amount)
         {
