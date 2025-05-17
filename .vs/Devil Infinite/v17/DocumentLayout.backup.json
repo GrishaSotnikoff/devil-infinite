@@ -1,42 +1,110 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\projects\\devil-infinite\\",
+  "WorkspaceRootPath": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\explosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\explosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\scripts\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:scripts\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\shaders\\wateranimators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\shaders\\wateranimators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\rocketprojectile3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\rocketprojectile3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\overlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\overlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\fireball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\fireball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\parry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\parry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\nail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\nail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\lightningspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\lightningspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\lightningspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\lightningspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\interfaces\\ispell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\interfaces\\ispell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\projects\\devil-infinite\\models\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:models\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\interfaces\\idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\interfaces\\idamageable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\spellbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\spellbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\canvas\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\canvas\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\spellcaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\spellcaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\rocketprojectile3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\rocketprojectile3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\overlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\overlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\scripts\\vfxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\scripts\\vfxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\scripts\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\scripts\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\scripts\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\scripts\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\scripts\\groundshadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\scripts\\groundshadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\parry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\parry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\hotbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\hotbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\firespell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\firespell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|c:\\self\\godot_v4.4.1-stable_mono_win64\\devil-infinite\\devil\\core\\explosioneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4137C201-4424-4E75-B00B-5B5F3BACADFC}|Devil Infinite.csproj|solutionrelative:devil\\core\\explosioneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,127 +114,334 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RocketProjectile3D.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\RocketProjectile3D.cs",
-              "RelativeDocumentMoniker": "Models\\RocketProjectile3D.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\RocketProjectile3D.cs",
-              "RelativeToolTip": "Models\\RocketProjectile3D.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T22:52:47.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Parry.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Parry.cs",
-              "RelativeDocumentMoniker": "Models\\Parry.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Parry.cs",
-              "RelativeToolTip": "Models\\Parry.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Nail.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Nail.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Nail.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Nail.cs",
+              "RelativeToolTip": "Devil\\Core\\Nail.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowAkAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T22:52:41.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LightningSpell.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\LightningSpell.cs",
-              "RelativeDocumentMoniker": "Models\\LightningSpell.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\LightningSpell.cs",
-              "RelativeToolTip": "Models\\LightningSpell.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T22:52:22.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainMenu.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\MainMenu.cs",
-              "RelativeDocumentMoniker": "Models\\MainMenu.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\MainMenu.cs",
-              "RelativeToolTip": "Models\\MainMenu.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T22:51:44.969Z",
+              "WhenOpened": "2025-05-17T08:41:51.619Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SceneManager.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Scripts\\SceneManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\SceneManager.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Scripts\\SceneManager.cs",
-              "RelativeToolTip": "Scripts\\SceneManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAOAAAAAAAAAA==",
+              "Title": "WaterAnimators.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Shaders\\WaterAnimators.cs",
+              "RelativeDocumentMoniker": "Devil\\Shaders\\WaterAnimators.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Shaders\\WaterAnimators.cs",
+              "RelativeToolTip": "Devil\\Shaders\\WaterAnimators.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T22:42:03.953Z",
+              "WhenOpened": "2025-05-17T13:43:32.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Overlay.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Overlay.cs",
-              "RelativeDocumentMoniker": "Models\\Overlay.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Overlay.cs",
-              "RelativeToolTip": "Models\\Overlay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Title": "FireBall.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\FireBall.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\FireBall.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\FireBall.cs",
+              "RelativeToolTip": "Devil\\Core\\FireBall.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAswCEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T22:39:13.66Z",
+              "WhenOpened": "2025-05-17T10:38:44.192Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "VFXManager.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\VFXManager.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Scripts\\VFXManager.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\VFXManager.cs",
+              "RelativeToolTip": "Devil\\Core\\Scripts\\VFXManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:44:03.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\Settings.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Scripts\\Settings.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\Settings.cs",
+              "RelativeToolTip": "Devil\\Core\\Scripts\\Settings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:44:00.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SceneManager.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\SceneManager.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Scripts\\SceneManager.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\SceneManager.cs",
+              "RelativeToolTip": "Devil\\Core\\Scripts\\SceneManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:43:57.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GroundShaderController.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\GroundShaderController.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Scripts\\GroundShaderController.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\GroundShaderController.cs",
+              "RelativeToolTip": "Devil\\Core\\Scripts\\GroundShaderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:43:49.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EnemySpawner.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\EnemySpawner.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Scripts\\EnemySpawner.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Scripts\\EnemySpawner.cs",
+              "RelativeToolTip": "Devil\\Core\\Scripts\\EnemySpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:43:30.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Weapon.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Weapon.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Weapon.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Weapon.cs",
+              "RelativeToolTip": "Devil\\Core\\Weapon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:42:14.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SpellCaster.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\SpellCaster.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\SpellCaster.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\SpellCaster.cs",
+              "RelativeToolTip": "Devil\\Core\\SpellCaster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:42:11.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SpellBase.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\SpellBase.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\SpellBase.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\SpellBase.cs",
+              "RelativeToolTip": "Devil\\Core\\SpellBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:42:07.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RocketProjectile3D.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\RocketProjectile3D.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\RocketProjectile3D.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\RocketProjectile3D.cs",
+              "RelativeToolTip": "Devil\\Core\\RocketProjectile3D.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:42:04.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Player.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Player.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Player.cs",
+              "RelativeToolTip": "Devil\\Core\\Player.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAmwFMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:42:01.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Parry.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Parry.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Parry.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Parry.cs",
+              "RelativeToolTip": "Devil\\Core\\Parry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:58.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Overlay.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Overlay.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Overlay.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Overlay.cs",
+              "RelativeToolTip": "Devil\\Core\\Overlay.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:54.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\MainMenu.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\MainMenu.cs",
+              "RelativeToolTip": "Devil\\Core\\MainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:49.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LightningSpell.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\LightningSpell.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\LightningSpell.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\LightningSpell.cs",
+              "RelativeToolTip": "Devil\\Core\\LightningSpell.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wCMAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:46.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HUD.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Canvas\\HUD.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Canvas\\HUD.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Canvas\\HUD.cs",
+              "RelativeToolTip": "Devil\\Core\\Canvas\\HUD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:44.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Hotbar.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Hotbar.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Hotbar.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Hotbar.cs",
+              "RelativeToolTip": "Devil\\Core\\Hotbar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:41.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FireSpell.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\FireSpell.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\FireSpell.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\FireSpell.cs",
+              "RelativeToolTip": "Devil\\Core\\FireSpell.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:26.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ExplosionEffect.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\ExplosionEffect.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\ExplosionEffect.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\ExplosionEffect.cs",
+              "RelativeToolTip": "Devil\\Core\\ExplosionEffect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:21.681Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Weapon.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Weapon.cs",
-              "RelativeDocumentMoniker": "Models\\Weapon.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Weapon.cs",
-              "RelativeToolTip": "Models\\Weapon.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAmwCAAAAAFAAAAAAAAAA==",
+              "Title": "Explosion.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Explosion.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Explosion.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Explosion.cs",
+              "RelativeToolTip": "Devil\\Core\\Explosion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T12:33:33.507Z",
+              "WhenOpened": "2025-05-17T08:41:18.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Enemy.cs",
+              "RelativeDocumentMoniker": "Devil\\Core\\Enemy.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Core\\Enemy.cs",
+              "RelativeToolTip": "Devil\\Core\\Enemy.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowD4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T08:41:05.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Player.cs",
-              "RelativeDocumentMoniker": "Models\\Player.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Player.cs",
-              "RelativeToolTip": "Models\\Player.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAwwFQAAAAHAAAAAAAAAA==",
+              "Title": "ISpell.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Interfaces\\ISpell.cs",
+              "RelativeDocumentMoniker": "Devil\\Interfaces\\ISpell.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Interfaces\\ISpell.cs",
+              "RelativeToolTip": "Devil\\Interfaces\\ISpell.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T12:29:23.749Z",
+              "WhenOpened": "2025-05-17T08:40:59.447Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\projects\\devil-infinite\\Models\\Enemy.cs",
-              "RelativeDocumentMoniker": "Models\\Enemy.cs",
-              "ToolTip": "C:\\projects\\devil-infinite\\Models\\Enemy.cs",
-              "RelativeToolTip": "Models\\Enemy.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Title": "IDamageable.cs",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Interfaces\\IDamageable.cs",
+              "RelativeDocumentMoniker": "Devil\\Interfaces\\IDamageable.cs",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\Devil\\Interfaces\\IDamageable.cs",
+              "RelativeToolTip": "Devil\\Interfaces\\IDamageable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T12:29:01.479Z"
+              "WhenOpened": "2025-05-17T08:07:08.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": ".gitattributes",
+              "DocumentMoniker": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\.gitattributes",
+              "RelativeDocumentMoniker": ".gitattributes",
+              "ToolTip": "C:\\self\\Godot_v4.4.1-stable_mono_win64\\devil-infinite\\.gitattributes",
+              "RelativeToolTip": ".gitattributes",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-16T16:44:51.587Z"
             }
           ]
         }

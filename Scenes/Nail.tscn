@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c42yvcvr2lv4r"]
 
-[ext_resource type="Script" uid="uid://s21qc2ww8djf" path="res://Models/Nail.cs" id="1_t2nhm"]
+[ext_resource type="Script" uid="uid://c3r0jglf58877" path="res://Devil/Core/Nail.cs" id="1_t2nhm"]
 [ext_resource type="PackedScene" uid="uid://dsxa3ip62jihd" path="res://VFX/Explosion.tscn" id="2_dn7ha"]
 [ext_resource type="PackedScene" uid="uid://7fmx05jy5dd8" path="res://Objects/Nail spell/M_Nail_spell.fbx" id="2_mgnek"]
 [ext_resource type="Texture2D" uid="uid://cbswqopkkcbfw" path="res://Objects/Nail spell/T_Nail_spell_albedo.tga" id="3_dn7ha"]

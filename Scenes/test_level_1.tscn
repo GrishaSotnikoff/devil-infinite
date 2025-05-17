@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ctuudycvufhpw" path="res://Scenes/Enemy.tscn" id="3_yq4yk"]
 [ext_resource type="Texture2D" uid="uid://b4q3isdipnvgv" path="res://wp4575220.webp" id="4_lv8wu"]
 [ext_resource type="Texture2D" uid="uid://dak3vjkvfkmr" path="res://Images/WallpaperFusion-night-sky-3840x1080.jpg" id="4_xrrax"]
-[ext_resource type="Script" uid="uid://jilxi3ewnw28" path="res://VFEZ-godot-2.0.2/vfez_material_3d.gd" id="6_6cxfm"]
+[ext_resource type="Script" uid="uid://csxdvbvi2p08l" path="res://VFEZ-godot-2.0.2/vfez_material_3d.gd" id="6_6cxfm"]
 [ext_resource type="PackedScene" uid="uid://d0bl5uw18ufn2" path="res://Scenes/EnemySpawner.tscn" id="7_xrrax"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6cxfm"]
@@ -71,6 +71,7 @@ shader_type spatial;
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lv8wu"]
 render_priority = 1
 shader = SubResource("Shader_xrrax")
+shader_parameter/damage = 0.0
 shader_parameter/global_color = Color(0.329158, 0.329158, 0.329158, 1)
 shader_parameter/global_alpha = 1.0
 shader_parameter/additive_config = false
@@ -195,8 +196,7 @@ height = 14.671
 
 [node name="Player" parent="." instance=ExtResource("2_i1kli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-DashMultiplier = 4.0
-DashDuration = 0.5
+script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.720916, -0.324469, 0.612372, 0.683013, -0.183013, 0.707107, -0.117362, 0.928023, 0.353554, 5, 17, -1.5)

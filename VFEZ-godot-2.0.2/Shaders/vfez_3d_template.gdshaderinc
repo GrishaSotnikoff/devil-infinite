@@ -13,6 +13,9 @@
 #if defined(UNSHADED)
 	render_mode unshaded;
 #endif
+uniform float damage : hint_range(0.0, 1.0, 0.01);
+uniform sampler2D damage_texture;
+uniform sampler2D albedo : source_color;
 
 #if defined(BLEND_MIX)
 	render_mode blend_mix;
@@ -359,7 +362,7 @@ group_uniforms;
 	uniform float shade_normal_map_depth: hint_range(0., 10.) = 1.;
 	group_uniforms;
 #endif
-	
+
 group_uniforms vertex_offset;
 uniform bool use_vertex_offset = false;
 group_uniforms;
@@ -513,7 +516,11 @@ bool is_using_screen_space_uv()
 // ---------------------------------------------------
 
 void vertex() {
-
+	vec4 rand = texture(damage_texture, VERTEX.xz);
+	rand = (rand / damage);
+	vec3 goal = VERTEX * clamp(rand.x, 0.45, 0.5);
+	goal *= 2.0;
+	VERTEX = goal;
 	#if defined(BILLBOARD_ENABLED)
 		MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
 				MAIN_CAM_INV_VIEW_MATRIX[0],
@@ -588,7 +595,8 @@ void vertex() {
 }
 
 void fragment() {
-
+	vec4 albedo_color = texture(albedo, UV);
+	ALBEDO = albedo_color.xyz;
 	// clamp UVS near edges (0., 1., 2., 3., 4., 5.) to reduce folding artifacts
 	vec2 uv_floor_top_included = max(vec2(0.), ceil(UV) - vec2(1.));
 	vec2 clampedUV = clamp(UV, vec2(0.001) + uv_floor_top_included, vec2(0.999) + uv_floor_top_included);
@@ -933,21 +941,21 @@ void fragment() {
 
 	ALBEDO = color.rgb;
 	ALPHA = color.a;
-	
+
 	#if defined(ALPHA_SCISSOR)
 		if (use_alpha_scissor)
 		{
-			ALPHA_SCISSOR_THRESHOLD = alpha_scissor_thres;	
+			ALPHA_SCISSOR_THRESHOLD = alpha_scissor_thres;
 		}
 	#endif
-	
+
 	#if defined(SHADE_NORMAL_MAP) && not defined(UNSHADED)
 		if (use_shade_normal_map)
 		{
 			vec2 normalUV = transform_uv(baseUV, shade_normal_map_texture_scale, shade_normal_map_texture_offset, false);
 			vec3 normal = texture(shade_normal_map_texture, normalUV).rgb;
 			NORMAL_MAP = normal;
-			NORMAL_MAP_DEPTH = shade_normal_map_depth;	
+			NORMAL_MAP_DEPTH = shade_normal_map_depth;
 		}
 	#endif
 }

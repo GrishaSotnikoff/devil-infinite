@@ -5,6 +5,9 @@
     <RootNamespace>DevilInfinite</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Shaders\Water.gdshader" />
+    <Compile Include="Devil\Shaders\Water.gdshader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Devil\Models\" />
   </ItemGroup>
 </Project>

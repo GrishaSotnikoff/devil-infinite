@@ -37,6 +37,11 @@ uniform bool premultiply_color = false;
 uniform bool premultiply_alpha = false;
 uniform float contrast: hint_range(0.0, 10) = 1.;
 uniform float brightness: hint_range(-1., 1.) = 0.;
+varying vec4 modulate_color;
+uniform float damage : hint_range(0.0, 1.0, 0.01);
+uniform sampler2D damage_texture;
+uniform sampler2D albedo : source_color;
+
 group_uniforms;
 
 group_uniforms rect_size;
@@ -352,25 +357,30 @@ group_uniforms;
 	#include "Effects/vfez_particle_anim.gdshaderinc"
 #endif
 
-varying vec4 modulate_color;
 
 void vertex() {
 	#if defined(PARTICLE_ANIM)
-		if (use_particle_anim)
-		{
-			UV = particle_anim(INSTANCE_CUSTOM.z, UV);
-		}
+	if (use_particle_anim)
+	{
+		UV = particle_anim(INSTANCE_CUSTOM.z, UV);
+	}
 	#endif
 
 	VERTEX += VERTEX * (rect_size_ratio - 1.0);
 	modulate_color = COLOR;
+	vec4 rand = texture(damage_texture, VERTEX.xz);
+	rand = (rand / damage);
+	vec3 goal = VERTEX * clamp(rand.x, 0.45, 0.5);
+	goal *= 2.0;
+	VERTEX = goal;
 }
 
 void fragment() {
 
 	vec2 startUV = UV * rect_size_ratio + vec2(-rect_size_ratio * 0.5 + 0.5);
 	vec2 baseUV = startUV;
-
+	vec4 albedo_color = texture(albedo, UV);
+	ALBEDO = albedo_color.xyz;
 	#if defined(UV_POLAR)
 		if (use_uv_polar)
 		{
@@ -752,5 +762,5 @@ void fragment() {
 	
 	// if the following line throws an error thats a godot bug, ignore it.
 	// Shader works as intented
-	COLOR = color;
+	//COLOR = color;
 }

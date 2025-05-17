@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://dsxa3ip62jihd"]
 
 [ext_resource type="Texture2D" uid="uid://b4xocdyog5skc" path="res://Textures/Flare00.PNG" id="1_5dr8c"]
-[ext_resource type="Script" uid="uid://ds87ifgup43en" path="res://Models/Explosion.cs" id="1_sogyr"]
+[ext_resource type="Script" uid="uid://dal7cgdowacrs" path="res://Devil/Core/Explosion.cs" id="1_sogyr"]
 [ext_resource type="Material" uid="uid://ip1wtq1bh7s5" path="res://VFX/flash1.tres" id="2_sogyr"]
 [ext_resource type="Material" uid="uid://cxt317bk4yfim" path="res://VFX/flash.tres" id="3_ifioa"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ctuudycvufhpw"]
 
-[ext_resource type="Script" uid="uid://bmk351hvnpfyx" path="res://Models/Enemy.cs" id="1_m1htj"]
+[ext_resource type="Script" uid="uid://du5wmoab12op7" path="res://Devil/Core/Enemy.cs" id="1_m1htj"]
 [ext_resource type="PackedScene" uid="uid://bgh3y0nvmaawf" path="res://Objects/Player_Meshes/m_Grey_Box_UE4_Mannequin.fbx" id="2_wovta"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wovta"]
@@ -2903,13 +2903,16 @@ _data = {
 &"new_animation": SubResource("Animation_wovta")
 }
 
-[node name="Enemy" type="StaticBody3D"]
+[node name="Enemy" type="CharacterBody3D"]
+disable_mode = 2
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
 script = ExtResource("1_m1htj")
 
 [node name="Enemy#MeshInstance3D" type="MeshInstance3D" parent="."]
 
 [node name="collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.468689, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.813214, 0)
 shape = SubResource("CapsuleShape3D_wovta")
 
 [node name="m_Grey_Box_UE4_Mannequin" parent="." instance=ExtResource("2_wovta")]
@@ -3066,10 +3069,24 @@ bones/80/position = Vector3(-3.86848e-09, 0.00221796, 3.46452e-09)
 bones/80/rotation = Quaternion(0.992471, -4.34654e-07, -0.122479, 3.39894e-06)
 bones/81/position = Vector3(0, 0.00102786, 0)
 
+[node name="6_UE4_1_0_0" parent="m_Grey_Box_UE4_Mannequin/Armature/Skeleton3D" index="0"]
+gi_mode = 2
+
+[node name="4_Mannequin_1_0_0" parent="m_Grey_Box_UE4_Mannequin/Armature/Skeleton3D" index="1"]
+gi_mode = 2
+
+[node name="4_CharacterMesh_1_0_0" parent="m_Grey_Box_UE4_Mannequin/Armature/Skeleton3D" index="2"]
+gi_mode = 2
+
+[node name="4_CharacterMesh0_1_0_0" parent="m_Grey_Box_UE4_Mannequin/Armature/Skeleton3D" index="3"]
+gi_mode = 2
+
 [node name="Hitbox" type="Area3D" parent="."]
+priority = 1
+gravity_space_override = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352356, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.696881, 0)
 shape = SubResource("CapsuleShape3D_xeo28")
 
 [node name="HandsAnimation" type="AnimationPlayer" parent="."]
@@ -3078,5 +3095,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_kpr8r")
 }
 autoplay = "new_animation"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
 
 [editable path="m_Grey_Box_UE4_Mannequin"]
